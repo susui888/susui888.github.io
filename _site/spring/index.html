@@ -91,7 +91,40 @@
         </nav>
 
         <div class="container mt-4">
-            <h1 id="spring-项目内容">Spring 项目内容…</h1>
+            <h1 id="coollib---library-management-api">CoolLib - Library Management API</h1>
+
+<p><strong>CoolLib Backend</strong> is a stateless REST service built with <strong>Spring Boot 3.4</strong> and <strong>Kotlin</strong>, serving as the central hub for the CoolLib mobile ecosystem (Android/iOS).</p>
+
+<h2 id="-key-technical-wins">🚀 Key Technical Wins</h2>
+
+<ul>
+  <li><strong>Architecture</strong>: <strong>Stateless REST</strong> design with a strict layered approach (Web, Service, Data).</li>
+  <li><strong>Security</strong>: <strong>JWT-based Auth</strong> via Spring Security for secure mobile session management.</li>
+  <li><strong>Data</strong>: <strong>PostgreSQL</strong> + <strong>Spring Data JPA</strong> for reliable persistence and performance.</li>
+  <li><strong>Scalability</strong>: Pure API-driven service optimized for native mobile clients.</li>
+</ul>
+
+<h2 id="-tech-stack">🛠 Tech Stack</h2>
+
+<ul>
+  <li><strong>Server</strong>: Spring Boot 3.4, Kotlin (JVM 17), Maven.</li>
+  <li><strong>Security</strong>: JWT, Spring Security, BCrypt.</li>
+  <li><strong>Database</strong>: PostgreSQL, Spring Data JPA.</li>
+</ul>
+
+<h2 id="-core-features">📊 Core Features</h2>
+
+<ul>
+  <li><strong>Auth</strong>: JWT-secured login &amp; registration.</li>
+  <li><strong>Catalog</strong>: Advanced book search &amp; filtering.</li>
+  <li><strong>Transactions</strong>: Borrowing process &amp; loan history.</li>
+  <li><strong>Categories</strong>: Genre-based navigation.</li>
+</ul>
+
+<h2 id="-mobile-connectivity">📱 Mobile Connectivity</h2>
+
+<p>Android and iOS clients connect via JSON. Secure endpoints require the <code class="language-plaintext highlighter-rouge">Authorization: Bearer &lt;token&gt;</code> header.</p>
+
 
         </div>
     </div>

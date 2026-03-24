@@ -91,7 +91,37 @@
         </nav>
 
         <div class="container mt-4">
-            <h1 id="android-项目内容">Android 项目内容…</h1>
+            <h1 id="coollib---library-management-android-app">CoolLib - Library Management Android App</h1>
+
+<p><strong>CoolLib</strong> is a high-performance library management app built with <strong>Jetpack Compose</strong> and <strong>Clean Architecture</strong>. It features a “Book-Style” custom design system and optimized data processing.</p>
+
+<h2 id="-key-technical-wins">🚀 Key Technical Wins</h2>
+
+<ul>
+  <li><strong>Architecture</strong>: Implemented <strong>Clean Architecture (MVVM)</strong> with strict layer separation (Data, Domain, UI) for maximum testability.</li>
+  <li><strong>Performance</strong>: Reduced data load times by <strong>60%</strong> using <strong>Kotlin Coroutines (<code class="language-plaintext highlighter-rouge">async/awaitAll</code>)</strong> for parallel data mapping in the repository layer.</li>
+  <li><strong>Dependency Injection</strong>: Utilized <strong>Hilt</strong> with custom <strong>Qualifiers</strong> (<code class="language-plaintext highlighter-rouge">@IoDispatcher</code>) for granular threading control.</li>
+  <li><strong>Reactive Data</strong>: Built a real-time UI pipeline using <strong>StateFlow/SharedFlow</strong> and <strong>Room</strong> for offline persistence.</li>
+  <li><strong>Testing</strong>: Achieved high reliability with <strong>Unit Tests (MockK)</strong> and <strong>UI Tests (Compose Rule)</strong> covering critical flows like Auth, Cart, and Loan History.</li>
+</ul>
+
+<h2 id="-tech-stack">🛠 Tech Stack</h2>
+
+<ul>
+  <li><strong>UI</strong>: Jetpack Compose, Material 3, Coil, Compose Navigation.</li>
+  <li><strong>Logic</strong>: MVVM, Use Cases, Coroutines, Flow, Hilt.</li>
+  <li><strong>Data</strong>: Retrofit, Moshi, Room, SharedPreferences.</li>
+</ul>
+
+<h2 id="-core-features">📊 Core Features</h2>
+
+<ul>
+  <li><strong>Loan Tracking</strong>: Filtered views for “Active Loans” vs. “History” with status-based UI.</li>
+  <li><strong>Smart Stats</strong>: Real-time calculation of “Due Soon” and “Overdue” metrics.</li>
+  <li><strong>QR Scanning</strong>: Integrated barcode/QR scanning for instant book checkout.</li>
+  <li><strong>Book-Style UI</strong>: Custom theme with a paper-like palette and paper-texture card components.</li>
+</ul>
+
 
         </div>
     </div>
