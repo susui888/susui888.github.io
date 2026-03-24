@@ -1,0 +1,121 @@
+---
+layout: default
+title: Resume
+permalink: /
+---
+
+<div class="row align-items-center mb-5">
+    <div class="col-md-8">
+        <h1 class="display-4 fw-bold text-primary mb-1">Ryan Su</h1>
+        <p class="lead text-dark fw-medium">Mathematics & Computer Science Student at Imperial College London</p>
+        <div class="d-flex flex-wrap gap-3 text-muted small">
+            <span><i class="bi bi-geo-alt"></i> London SW7 2BB</span>
+            <a href="mailto:yirong.su25@imperial.ac.uk" class="text-decoration-none text-muted">yirong.su25@imperial.ac.uk</a>
+            <a href="https://github.com/Ryan-yirongsu" class="text-decoration-none text-muted">GitHub: Ryan-yirongsu</a>
+        </div>
+    </div>
+    <div class="col-md-4 text-md-end mt-3 mt-md-0">
+        <p class="small text-secondary mb-0">Keen to apply quantitative and programming skills to real-world problems.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <section class="mb-5">
+            <h3 class="h4 border-bottom pb-2 mb-4 text-uppercase fw-bold">
+                <svg class="bi me-2" width="20" height="20"><use xlink:href="#people-circle"></use></svg>Education
+            </h3>
+
+            <div class="mb-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <h5 class="fw-bold mb-1">Imperial College London</h5>
+                    <span class="badge bg-primary rounded-pill">2025 – 2029</span>
+                </div>
+                <p class="text-primary fw-semibold mb-2">MEng Mathematics and Computer Science</p>
+                <p class="small text-muted mb-2"><strong>Modules:</strong> Kotlin, C, Java & Assembly, Discrete Maths, Analysis, Linear Algebra, Groups, Calculus & Applications</p>
+                <div class="alert alert-info py-2 px-3 small d-inline-block">
+                    Computing Entrance Scholarship (2025–2026)
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div class="d-flex justify-content-between align-items-start">
+                    <h5 class="fw-bold mb-1">No.2 High School of East China Normal University</h5>
+                    <span class="text-muted small">Shanghai, 2022 – 2025</span>
+                </div>
+                <ul class="list-unstyled small mt-2">
+                    <li><span class="fw-bold text-dark">AP:</span> CS A (5), Calculus BC (5), Statistics (5), Physics 1/2/C (4×5), Economics (GPA 4.0)</li>
+                    <li><span class="fw-bold text-dark">A Level:</span> Further Mathematics (A*) | <span class="fw-bold text-dark">TMUA:</span> 9/9 | <span class="fw-bold text-dark">AMC:</span> Top 1%</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h3 class="h4 border-bottom pb-2 mb-4 text-uppercase fw-bold">
+                <svg class="bi me-2" width="20" height="20"><use xlink:href="#grid"></use></svg>Projects
+            </h3>
+            
+            <div class="card border-0 shadow-sm mb-4 bg-light">
+                <div class="card-body">
+                    <h5 class="fw-bold card-title text-dark">Library System Development</h5>
+                    <ul class="card-text small text-secondary">
+                        <li class="mb-1">Built backend with <strong>Spring Boot/Security</strong> using RESTful APIs and modular OOP architecture.</li>
+                        <li class="mb-1">Implemented role-based authorization and one-way hashing for secure authentication.</li>
+                        <li class="mb-1">Optimized <strong>PostgreSQL</strong> indexing and concurrency; used <strong>Kotlin coroutines</strong> for scalability.</li>
+                        <li class="mb-1">Improved search efficiency by <strong>25%</strong> via RegEx-based fuzzy search optimization.</li>
+                        <li>Comprehensive unit & integration testing (JUnit, Mockito).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="ps-3 border-start border-3 border-primary mb-4">
+                <h5 class="fw-bold mb-1">EPQ – Consumer Behaviour & Emotions (Grade A*)</h5>
+                <p class="small text-muted mb-0">Applied HMMs, PCA and regression; tuned transition and emission matrices for predictive modelling.</p>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h3 class="h4 border-bottom pb-2 mb-4 text-uppercase fw-bold">
+                <svg class="bi me-2" width="20" height="20"><use xlink:href="#speedometer2"></use></svg>Experience
+            </h3>
+            <div class="mb-3">
+                <div class="d-flex justify-content-between">
+                    <h5 class="fw-bold">Lumi Academy – Private Tutor</h5>
+                    <span class="text-muted small">Winter 2024 – Present</span>
+                </div>
+                <ul class="small mt-2">
+                    <li>Delivered 500+ hours of university maths & MAT preparation; 4 Oxford admits, +20% avg improvement.</li>
+                    <li>Designed and taught Java & Algorithms (data structures, recursion, sorting).</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="p-4 bg-white border rounded shadow-sm">
+            <h4 class="h5 fw-bold mb-3 border-bottom pb-2">Technical Skills</h4>
+            <div class="mb-4">
+                <p class="small fw-bold mb-2">Proficient</p>
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span class="badge bg-dark">Java</span>
+                    <span class="badge bg-dark">Kotlin</span>
+                    <span class="badge bg-dark">Haskell</span>
+                    <span class="badge bg-dark">C</span>
+                </div>
+                <p class="small fw-bold mb-2">Familiar</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-secondary">SQL</span>
+                    <span class="badge bg-secondary">HTML</span>
+                    <span class="badge bg-secondary">CSS</span>
+                    <span class="badge bg-secondary">PostgreSQL</span>
+                </div>
+            </div>
+
+            <h4 class="h5 fw-bold mb-3 border-bottom pb-2">Interests</h4>
+            <div class="small">
+                <p class="mb-2"><span class="text-primary fw-bold">Club:</span> Imperial Computing Society & Poker Club</p>
+                <p class="mb-0"><span class="text-primary fw-bold">Experience:</span> 10+ years Texas Hold’em experience.</p>
+            </div>
+        </div>
+    </div>
+</div>

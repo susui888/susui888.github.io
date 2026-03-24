@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} | Ryan Su</title>
+    <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url }}">
+    <script src="{{ '/assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
+    <style>
+        html, body { height: 100%; margin: 0; overflow: hidden; }
+        main.d-flex { height: 100vh; overflow: hidden; }
+        .sidebar { height: 100vh; overflow-y: auto; }
+        .main-content { height: 100vh; overflow-y: auto; }
+        .dropdown-item:hover { background-color: #0d6efd !important; color: #fff !important; }
+    </style>
+</head>
+<body>
+{% include icons.svg %}
+
+<main class="d-flex flex-nowrap">
+    {% include sidebar.html %}
+
+    <div class="b-example-divider b-example-vr"></div>
+
+    <div class="flex-grow-1 p-3 main-content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="min-height: 40px">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse">
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            {{ content }}
+        </div>
+    </div>
+</main>
+</body>
+</html>
