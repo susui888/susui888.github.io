@@ -1,19 +1,46 @@
 <style>
-    /* 核心修复：覆盖 Bootstrap 默认蓝色 */
+    /* 1. 核心导航样式：覆盖 Bootstrap 默认蓝色 */
     .sidebar .nav-pills .nav-link.active {
         background-color: #8B4513 !important; /* 经典书卷棕 */
-        color: white !important;              /* 确保文字为白色 */
+        color: white !important;
+        box-shadow: 0 4px 6px rgba(139, 69, 19, 0.2); /* 增加微妙的阴影 */
     }
 
-    /* 悬停时的棕色效果 (可选) */
+    /* 2. 悬停效果：模拟纸张被轻轻拨动的动态感 */
     .sidebar .nav-pills .nav-link:hover:not(.active) {
-        background-color: #f0e6d2 !important; /* 浅米色，类似书页 */
+        background-color: #f0e6d2 !important; /* 浅米色 */
         color: #8B4513 !important;
+        transform: translateX(5px); /* 悬停时向右微滑 */
     }
 
-    /* 侧边栏背景微调为羊皮纸感 (可选) */
+    /* 3. 侧边栏整体背景与边框：羊皮纸色调 */
     .sidebar.bg-light {
         background-color: #fdfdfb !important;
+        border-right: 1px solid #eee5d8;
+    }
+
+    /* 4. 导航链接布局与动画 */
+    .sidebar .nav-link {
+        transition: all 0.25s ease-in-out;
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        margin-bottom: 4px;
+    }
+
+    /* 5. SVG 图标颜色处理：确保在选中和悬停时颜色正确 */
+    .sidebar .nav-link svg {
+        transition: color 0.2s;
+    }
+
+    .sidebar .nav-link.active svg {
+        color: white !important; /* 选中时图标变白 */
+    }
+
+    /* 6. 修饰分割线：减弱黑色感，使其更融合 */
+    .sidebar hr {
+        border-top: 1px solid #8B4513;
+        opacity: 0.15;
     }
 </style>
 
@@ -25,7 +52,7 @@
              height="40"
              class="rounded-circle me-2 border shadow-sm"
              style="object-fit: cover;">
-        <span class="fs-4 fw-bold text-uppercase" style="letter-spacing: 1px;">Portfolio</span>
+        <span class="fs-4 fw-bold text-uppercase" style="letter-spacing: 1px; color: #8B4513;">Portfolio</span>
     </a>
 
     <hr>
@@ -34,28 +61,28 @@
         <li class="nav-item">
             <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% else %}text-dark{% endif %}">
                 <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor"><use xlink:href="#home"></use></svg>
-                Resume
+                About Me
             </a>
         </li>
 
         <li>
             <a href="{{ '/spring/' | relative_url }}" class="nav-link {% if page.url contains '/spring/' %}active{% else %}text-dark{% endif %}">
                 <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor"><use xlink:href="#speedometer2"></use></svg>
-                Spring Project
+                Backend / Spring
             </a>
         </li>
 
         <li>
             <a href="{{ '/android/' | relative_url }}" class="nav-link {% if page.url contains '/android/' %}active{% else %}text-dark{% endif %}">
                 <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor"><use xlink:href="#table"></use></svg>
-                Android
+                Android / Kotlin
             </a>
         </li>
 
         <li>
             <a href="{{ '/ios/' | relative_url }}" class="nav-link {% if page.url contains '/ios/' %}active{% else %}text-dark{% endif %}">
                 <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor"><use xlink:href="#grid"></use></svg>
-                iOS
+                iOS / SwiftUI
             </a>
         </li>
     </ul>

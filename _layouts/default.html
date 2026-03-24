@@ -7,11 +7,61 @@
     <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url }}">
     <script src="{{ '/assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
     <style>
+        /* 1. 基础布局逻辑 */
         html, body { height: 100%; margin: 0; overflow: hidden; }
         main.d-flex { height: 100vh; overflow: hidden; }
         .sidebar { height: 100vh; overflow-y: auto; }
         .main-content { height: 100vh; overflow-y: auto; }
-        .dropdown-item:hover { background-color: #0d6efd !important; color: #fff !important; }
+
+        /* 2. 全局书卷质感设定 (解决切换页面字体变动的问题) */
+        :root {
+            --book-brown: #8B4513;   /* 经典书卷棕 */
+            --paper-bg: #fdfdfb;      /* 羊皮纸背景色 */
+            --text-main: #2c2c2c;     /* 深木炭黑文字 */
+        }
+
+        body {
+            background-color: var(--paper-bg) !important;
+            /* 核心：强制所有页面使用衬线体，维持简历的正式感 */
+            font-family: 'Georgia', 'Times New Roman', serif !important;
+            color: var(--text-main);
+        }
+
+        /* 3. 侧边栏样式全局化 */
+        .sidebar.bg-light {
+            background-color: #f8f5ee !important; /* 略深的侧边栏底色 */
+            border-right: 1px solid #eee5d8;
+        }
+
+        .sidebar .nav-pills .nav-link.active {
+            background-color: var(--book-brown) !important;
+            color: white !important;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .sidebar .nav-pills .nav-link:hover:not(.active) {
+            background-color: #ede2cf !important;
+            color: var(--book-brown) !important;
+            transform: translateX(5px);
+            transition: all 0.2s ease;
+        }
+
+        /* 4. 标题与正文颜色统一 */
+        h1, h2, h3, h4, .text-custom-brown {
+            color: var(--book-brown) !important;
+            font-family: 'Georgia', serif !important;
+        }
+
+        /* 5. 保护技术内容：代码块不使用衬线体 */
+        code, pre {
+            font-family: 'JetBrains Mono', 'Consolas', monospace !important;
+            background-color: rgba(0,0,0,0.05);
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .dropdown-item:hover { background-color: var(--book-brown) !important; color: #fff !important; }
     </style>
 </head>
 <body>
@@ -23,7 +73,7 @@
     <div class="b-example-divider b-example-vr"></div>
 
     <div class="flex-grow-1 p-3 main-content">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="min-height: 40px">
+        <nav class="navbar navbar-expand-lg navbar-light" style="min-height: 40px; background-color: var(--paper-bg);">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse">
                 </div>
