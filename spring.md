@@ -1,3 +1,8 @@
+---
+layout: default
+title: Spring Project
+permalink: /spring/
+---
 # CoolLib - Library Management API
 
 **CoolLib Backend** is a stateless REST service built with **Spring Boot 3.4** and **Kotlin**, serving as the central hub for the CoolLib mobile ecosystem (Android/iOS).
@@ -25,3 +30,4 @@
 ## 📱 Mobile Connectivity
 
 Android and iOS clients connect via JSON. Secure endpoints require the `Authorization: Bearer <token>` header.
+
