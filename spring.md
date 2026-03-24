@@ -33,6 +33,8 @@ permalink: /spring/
 - **Data**: **PostgreSQL** + **Spring Data JPA** for reliable persistence and performance.
 - **Scalability**: Pure API-driven service optimized for native mobile clients.
 
+{% include graph-architecture.html %}
+
 ## 🛠 Tech Stack
 
 - **Server**: Spring Boot 3.4, Kotlin (JVM 17), Maven.

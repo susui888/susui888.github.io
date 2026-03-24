@@ -34,12 +34,7 @@ permalink: /
         background-color: #f8f5ee !important; /* 淡淡的羊皮纸色 */
         border-left: 4px solid var(--book-brown) !important;
         border-radius: 0 8px 8px 0;
-        transition: transform 0.2s ease;
-    }
-
-    .project-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+        transition: box-shadow 0.2s ease, background-color 0.2s ease;
     }
 
     /* 侧边栏技能卡片 */
@@ -122,7 +117,7 @@ permalink: /
 
             <div class="card border-0 shadow-sm mb-4 project-card">
                 <div class="card-body">
-                    <h5 class="fw-bold card-title text-dark">Library System Development (CoolLib2)</h5>
+                    <h5 class="fw-bold card-title text-dark">Library System Development</h5>
                     <ul class="card-text small text-secondary" style="line-height: 1.6;">
                         <li class="mb-1">Built backend with <strong>Spring Boot/Security</strong> using Clean Architecture (DTO/Domain/Entity).</li>
                         <li class="mb-1">Implemented role-based authorization and one-way hashing for secure authentication.</li>

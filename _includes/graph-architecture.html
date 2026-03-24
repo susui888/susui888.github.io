@@ -1,0 +1,46 @@
+<div class="project-card p-3 mb-4" style="background-color: #f8f5ee; border-left: 5px solid #8B4513;">
+    <div class="d-flex justify-content-between align-items-center">
+        <span class="fw-bold text-custom-brown"><i class="bi bi-diagram-3 me-2"></i> Architecture Design</span>
+        <button class="btn btn-sm"
+                style="border: 1px solid #8B4513; color: #8B4513;"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mermaidCollapse">
+            Show / Hide
+        </button>
+    </div>
+
+    <div class="collapse" id="mermaidCollapse">
+        <div class="mt-4 pb-3">
+            <div class="mermaid" style="max-width: 400px; margin: 0 auto;">
+                graph TD
+                subgraph MobileEcosystem [Mobile Ecosystem]
+                A[Android]
+                B[iOS]
+                end
+
+                subgraph SpringService [Spring Boot Service]
+                C[Controller / REST]
+                D[Service / Logic]
+                E[Data Access / JPA]
+                end
+
+                subgraph DB [Database]
+                F[(PostgreSQL)]
+                end
+
+                A --> C
+                B --> C
+                C --> D
+                D --> E
+                E --> F
+
+                style SpringService fill:#fdfdfb,stroke:#8B4513,stroke-width:2px
+                style MobileEcosystem fill:#fff,stroke:#333
+            </div>
+            <p class="small text-muted text-center mt-3 mb-0">
+                *The backend follows a strict <strong>Stateless</strong> pattern.*
+            </p>
+        </div>
+    </div>
+</div>

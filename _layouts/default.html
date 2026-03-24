@@ -65,6 +65,51 @@
     </style>
 </head>
 <body>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.13.0/dist/mermaid.min.js"></script>
+
+<script>
+    // 1. 初始化
+    mermaid.initialize({
+        startOnLoad: false,
+        securityLevel: 'loose',
+        theme: 'base',
+        themeVariables: {
+            primaryColor: '#fdfdfb',
+            primaryTextColor: '#8B4513',
+            primaryBorderColor: '#8B4513',
+            lineColor: '#5d2e0d',
+            fontFamily: 'Georgia, serif'
+        }
+    });
+
+    // 2. 核心：监听 Bootstrap 展开事件
+    document.addEventListener('shown.bs.collapse', function (event) {
+        const container = event.target;
+        const mermaidDiv = container.querySelector('.mermaid');
+
+        // 只有当内部有 mermaid 元素且还没被渲染过时才执行
+        if (mermaidDiv && !mermaidDiv.querySelector('svg')) {
+            const id = 'mermaid-svg-' + Math.random().toString(36).substr(2, 9);
+            const content = mermaidDiv.textContent.trim();
+
+            // 手动调用 render 函数生成 SVG 代码
+            mermaid.render(id, content).then(({ svg }) => {
+                mermaidDiv.innerHTML = svg;
+                // 强制调整 SVG 宽度以适应容器
+                const svgElement = mermaidDiv.querySelector('svg');
+                if (svgElement) {
+                    svgElement.style.maxWidth = '100%';
+                    svgElement.style.height = 'auto';
+                }
+            }).catch(err => {
+                console.error("Mermaid Render Error:", err);
+            });
+        }
+    });
+</script>
+
+
 {% include icons.svg %}
 
 <main class="d-flex flex-nowrap">
