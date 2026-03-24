@@ -1,37 +1,68 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 bg-light text-dark sidebar" style="width: 280px;">
+<style>
+    /* 核心修复：覆盖 Bootstrap 默认蓝色 */
+    .sidebar .nav-pills .nav-link.active {
+        background-color: #8B4513 !important; /* 经典书卷棕 */
+        color: white !important;              /* 确保文字为白色 */
+    }
+
+    /* 悬停时的棕色效果 (可选) */
+    .sidebar .nav-pills .nav-link:hover:not(.active) {
+        background-color: #f0e6d2 !important; /* 浅米色，类似书页 */
+        color: #8B4513 !important;
+    }
+
+    /* 侧边栏背景微调为羊皮纸感 (可选) */
+    .sidebar.bg-light {
+        background-color: #fdfdfb !important;
+    }
+</style>
+
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-light text-dark sidebar" style="width: 280px; min-height: 100vh;">
     <a href="{{ '/' | relative_url }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-        <span class="fs-4">Ryan Su</span>
+        <img src="{{ '/assets/img/pikachu.jpg' | relative_url }}"
+             alt="Portfolio Logo"
+             width="40"
+             height="40"
+             class="rounded-circle me-2 border shadow-sm"
+             style="object-fit: cover;">
+        <span class="fs-4 fw-bold text-uppercase" style="letter-spacing: 1px;">Portfolio</span>
     </a>
+
     <hr>
+
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
             <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% else %}text-dark{% endif %}">
-                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor"><use xlink:href="#home"></use></svg>
                 Resume
             </a>
         </li>
 
         <li>
             <a href="{{ '/spring/' | relative_url }}" class="nav-link {% if page.url contains '/spring/' %}active{% else %}text-dark{% endif %}">
-                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor"><use xlink:href="#speedometer2"></use></svg>
                 Spring Project
             </a>
         </li>
 
         <li>
             <a href="{{ '/android/' | relative_url }}" class="nav-link {% if page.url contains '/android/' %}active{% else %}text-dark{% endif %}">
-                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor"><use xlink:href="#table"></use></svg>
                 Android
             </a>
         </li>
 
         <li>
             <a href="{{ '/ios/' | relative_url }}" class="nav-link {% if page.url contains '/ios/' %}active{% else %}text-dark{% endif %}">
-                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor"><use xlink:href="#grid"></use></svg>
                 iOS
             </a>
         </li>
     </ul>
+
     <hr>
+
+    <div class="small text-muted px-2">
+        <span>© 2026 Ryan Su</span>
+    </div>
 </div>
