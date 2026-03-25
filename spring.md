@@ -35,6 +35,10 @@ permalink: /spring/
 
 {% include graph-architecture.html %}
 
+{% include graph-authentication.html %} 
+
+{% include graph-database.html %}
+
 ## 🛠 Tech Stack
 
 - **Server**: Spring Boot 3.4, Kotlin (JVM 17), Maven.

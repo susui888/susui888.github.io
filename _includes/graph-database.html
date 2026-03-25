@@ -1,0 +1,59 @@
+<div class="project-card p-3 mb-4" style="background-color: #f8f5ee; border-left: 5px solid #8B4513;">
+    <div class="d-flex justify-content-between align-items-center">
+        <span class="fw-bold text-custom-brown"><i class="bi bi-database me-2"></i> Database Schema (ERD)</span>
+        <button class="btn btn-sm"
+                style="border: 1px solid #8B4513; color: #8B4513;"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#erCollapse">
+            Show / Hide
+        </button>
+    </div>
+
+    <div class="collapse" id="erCollapse">
+        <div class="mt-4 pb-3">
+            <div class="mermaid" style="width: 60%; margin: 0 auto;">
+                erDiagram
+                CATEGORIES ||--o{ BOOKS : "classifies"
+                USERS ||--o{ LOANS : "places"
+                BOOKS ||--o{ LOANS : "is borrowed in"
+
+                CATEGORIES {
+                serial categoryid PK
+                varchar categoryname
+                text description
+                varchar language
+                }
+
+                BOOKS {
+                serial bookid PK
+                varchar isbn UK
+                varchar title
+                varchar author
+                integer categoryid FK
+                integer availablecopies
+                text description
+                }
+
+                USERS {
+                serial userid PK
+                varchar username UK
+                varchar email UK
+                date registrationdate
+                }
+
+                LOANS {
+                serial loanid PK
+                integer bookid FK
+                integer userid FK
+                date borrowdate
+                date duedate
+                varchar loanstatus "Returned/Borrowed/Overdue"
+                }
+            </div>
+            <p class="small text-muted text-center mt-3 mb-0">
+                *Normalized <strong>PostgreSQL</strong> schema featuring indexed lookups and status constraints.*
+            </p>
+        </div>
+    </div>
+</div>
