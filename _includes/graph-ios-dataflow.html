@@ -12,23 +12,39 @@
 
     <div class="collapse" id="fetchingCollapse">
         <div class="mt-4 pb-3">
-            <div class="mermaid" style="width: 100%; margin: 0 auto;">
-                graph RL
-                subgraph iOS_UI ["UI Layer - SwiftUI"]
-                IA[View / Screen] -->|Observes| IB[ViewModel]
-                IB -->|Publishes| IC["@Published / AsyncStream"]
+            <div class="mermaid" style="width: 50%; margin: 0 auto;">
+                graph TD
+                subgraph I_Infra ["Infrastructure & DI"]
+                IAPI[URLSession / Web]
+                ISD[(SwiftData / DB)]
+                IContainer[Dependency Factory]
                 end
 
-                subgraph iOS_Domain ["Domain Layer - Business"]
-                IB -->|Calls| ID["UseCases / Interactors"]
-                ID -->|Interfaces| IE[Repository Protocol]
+                subgraph I_Proto ["Abstractions (Protocols)"]
+                IRepo[["BookRepository (Protocol)"]]
                 end
 
-                subgraph iOS_Data ["Data Layer - Infrastructure"]
-                IE -->|Implementation| IF[Repository Impl]
-                IF -->|URLSession| IG[Remote API]
-                IF -->|SwiftData| IH[Local Storage]
+                subgraph I_UI ["Presentation Layer (SwiftUI)"]
+                direction TB
+                IVM["HomeViewModel (@Observable)"]
+                IView[SwiftUI View / Screen]
                 end
+
+                %% Dependency & Injection Flow
+                IContainer -.-> IAPI & ISD
+                IContainer -.-> IVM
+
+                %% Data Flow
+                IAPI & ISD --> IRepo
+                IRepo -->|async/await| IVM
+
+                %% Vertical flow inside UI Layer
+                IVM -- "Observation" --> IView
+                IView -- "Intent / Action" --> IVM
+
+                style I_Infra fill:#f0f7ff,stroke:#007AFF
+                style I_Proto fill:#fff,stroke:#007AFF,stroke-dasharray: 5 5
+                style I_UI fill:#fff,stroke:#333,stroke-width:2px
             </div>
             <p class="small text-muted text-center mt-3 mb-0">
                 *Consistent with the Android architecture using <strong>Protocol-Oriented Programming</strong>.*

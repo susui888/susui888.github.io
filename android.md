@@ -3,7 +3,7 @@ layout: default
 title: Android Project
 permalink: /android/
 ---
-# CoolLib - Library Management Android App
+# 🤖 CoolLib - Library Management Android App
 
 <div style="margin: 10px 0 30px 15px;"> <a href="https://github.com/susui888/CoolLib_Android" target="_blank" 
        style="text-decoration: none; 
@@ -24,15 +24,15 @@ permalink: /android/
     </a>
 </div>
 
-**CoolLib** is a high-performance library management app built with **Jetpack Compose** and **Clean Architecture**. It features a "Book-Style" custom design system and optimized data processing.
+**CoolLib** is a high-performance library management ecosystem built with **Jetpack Compose** and **Clean Architecture**. It features a "Book-Style" custom design system and enterprise-grade data handling.
 
 ## 🚀 Key Technical Wins
 
-- **Architecture**: Implemented **Clean Architecture (MVVM)** with strict layer separation (Data, Domain, UI) for maximum testability.
-- **Performance**: Reduced data load times by **60%** using **Kotlin Coroutines (`async/awaitAll`)** for parallel data mapping in the repository layer.
-- **Dependency Injection**: Utilized **Hilt** with custom **Qualifiers** (`@IoDispatcher`) for granular threading control.
-- **Reactive Data**: Built a real-time UI pipeline using **StateFlow/SharedFlow** and **Room** for offline persistence.
-- **Testing**: Achieved high reliability with **Unit Tests (MockK)** and **UI Tests (Compose Rule)** covering critical flows like Auth, Cart, and Loan History.
+- **Clean Architecture**: Implemented strict **MVVM** with isolated layers (Data, Domain, UI) using **Kotlin First** principles for high maintainability.
+- **Performance Tuning**: Reduced data load times by **60%** via **Coroutines (`async/awaitAll`)** for concurrent repository-level data mapping.
+- **Dependency Injection**: Engineered a robust DI graph with **Hilt**, utilizing custom **Qualifiers** (`@IoDispatcher`) for granular threading control.
+- **Reactive Pipeline**: Built a real-time data flow using **StateFlow/SharedFlow** integrated with **Room** for an "Offline-First" experience.
+- **Quality Assurance**: Maintained system stability with **MockK** unit tests and **Compose Rule** UI tests covering core business logic.
 
 {% include graph-android-dataflow.html %}
 
@@ -40,14 +40,13 @@ permalink: /android/
 
 ## 🛠 Tech Stack
 
-- **UI**: Jetpack Compose, Material 3, Coil, Compose Navigation.
-- **Logic**: MVVM, Use Cases, Coroutines, Flow, Hilt.
-- **Data**: Retrofit, Moshi, Room, SharedPreferences.
+- **UI**: Jetpack Compose, Material 3, Coil (Image Loading), Compose Navigation.
+- **Logic**: MVVM, Use Cases, Coroutines, Flow, Hilt (DI).
+- **Data**: Retrofit (REST API), Moshi (JSON), Room (Local DB), SharedPreferences.
 
-## 📊 Core Features
+## ✨ Core Features
 
-- **Loan Tracking**: Filtered views for "Active Loans" vs. "History" with status-based UI.
-- **Smart Stats**: Real-time calculation of "Due Soon" and "Overdue" metrics.
-- **QR Scanning**: Integrated barcode/QR scanning for instant book checkout.
-- **Book-Style UI**: Custom theme with a paper-like palette and paper-texture card components.
-
+- **📖 Loan Tracking**: Optimized list views for "Active" vs. "History" using status-driven UI components.
+- **📈 Smart Insights**: Real-time calculation of library metrics such as "Due Soon" and "Overdue" items.
+- **🔍 Intelligent Search**: Multi-criteria filtering logic with localized caching for instantaneous results.
+- **🎨 Book-Style UI**: Custom-themed design system with a signature paper-like palette and textured components.

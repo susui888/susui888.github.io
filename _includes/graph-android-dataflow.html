@@ -12,23 +12,42 @@
 
     <div class="collapse" id="archCollapse">
         <div class="mt-4 pb-3">
-            <div class="mermaid" style="width: 100%; margin: 0 auto;">
-                graph RL
-                subgraph UI_Layer [UI Layer - Jetpack Compose]
-                A[Screen / UI] -->|Observes| B[ViewModel]
-                B -->|Collects| C[StateFlow / UI State]
+            <div class="mermaid" style="width: 60%; margin: 0 auto;">
+                graph TD
+                subgraph DI ["Hilt DI (@Module)"]
+                Hilt{{Hilt Container}}
                 end
 
-                subgraph Domain_Layer [Domain Layer - Business Logic]
-                B -->|Calls| D[Use Cases]
-                D -->|Interfaces| E[Repository Interface]
+                subgraph Data ["Data Layer (Infrastructure)"]
+                Retrofit[Retrofit / OkHttp]
+                Room[(Room / SQLite)]
                 end
 
-                subgraph Data_Layer [Data Layer - Infrastructure]
-                E -->|Implementation| F[Repository Impl]
-                F -->|Retrofit| G[Remote API]
-                F -->|Room| H[Local DB]
+                subgraph Domain ["Domain Layer (Business)"]
+                ARepo[BookRepositoryImpl]
+                AUC[BooksUseCases]
                 end
+
+                subgraph Presentation ["Presentation Layer (UI)"]
+                AVM["ViewModel / @HiltViewModel"]
+                AUI[Jetpack Compose Screen]
+                end
+
+                %% Hilt providing instances
+                Hilt -.->|Provides Singletons| Retrofit
+                Hilt -.->|Provides Database| Room
+                Hilt -.->|Injects Implementation| ARepo
+                Hilt -.->|Injects ViewModel| AVM
+
+                %% Data Flow
+                Retrofit & Room --> ARepo
+                ARepo --> AUC
+                AUC --> AVM
+                AVM -- "StateFlow (UDF)" --> AUI
+                AUI -- "User Events" --> AVM
+
+                style DI fill:#f1f8e9,stroke:#558b2f,stroke-width:2px
+                style Presentation fill:#fff,stroke:#8B4513,stroke-width:2px
             </div>
             <p class="small text-muted text-center mt-3 mb-0">
                 *Strict <strong>Unidirectional Data Flow (UDF)</strong> using Kotlin Flows and Hilt DI.*

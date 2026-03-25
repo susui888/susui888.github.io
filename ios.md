@@ -3,7 +3,7 @@ layout: default
 title: iOS Project
 permalink: /ios/
 ---
-# CoolLib - Library Management iOS App
+# 🍎 CoolLib - Library Management iOS App
 
 <div style="margin: 10px 0 30px 15px;"> <a href="https://github.com/susui888/CoolLib2_iOS" target="_blank" 
        style="text-decoration: none; 
@@ -24,15 +24,15 @@ permalink: /ios/
     </a>
 </div>
 
-**CoolLib** is a high-performance library management app built with **SwiftUI** and **Clean Architecture**. It mirrors the Android version's architecture and features while leveraging modern iOS technologies.
+**CoolLib** is a high-performance library management ecosystem built with **SwiftUI** and **Clean Architecture**. It delivers a premium native experience leveraging modern iOS frameworks and reactive design patterns.
 
 ## 🚀 Key Technical Wins
 
-- **Architecture**: Implemented **Clean Architecture (MVVM)** with strict layer separation, ensuring high modularity and testability.
-- **Concurrency**: Utilized **Swift Structured Concurrency (Async/Await)** for efficient, non-blocking data fetching and parallel mapping.
-- **Data Persistence**: Leveraging **SwiftData** for modern, declarative local storage and seamless data syncing.
-- **Reactive UI**: Built a fluid UI using **SwiftUI** and **Combine**, ensuring real-time state synchronization across all views.
-- **Testing**: Robust test suite using **XCTest** (or Swift Testing) covering core business logic and repository mapping.
+- **Protocol-Oriented Architecture**: Implemented **Clean Architecture (MVVM)** with strict abstraction layers, utilizing **Swift Protocols** for decoupled and testable logic.
+- **Modern Concurrency**: Leveraged **Structured Concurrency (Async/Await)** to handle parallel data fetching and repository mapping without callback nesting.
+- **Declarative Persistence**: Integrated **SwiftData** for efficient, model-centric local storage and seamless "Offline-First" state synchronization.
+- **Reactive UI Pipeline**: Engineered a responsive data binding layer using **Observation** and **Combine**, ensuring fluid UI updates across complex view hierarchies.
+- **Quality Assurance**: Built a comprehensive test suite using **XCTest**, focusing on repository mapping accuracy and core domain entity validation.
 
 {% include graph-ios-dataflow.html %}
 
@@ -40,14 +40,13 @@ permalink: /ios/
 
 ## 🛠 Tech Stack
 
-- **UI**: SwiftUI, SF Symbols, Custom ViewModifiers.
-- **Logic**: MVVM, Use Cases, Async/Await, Combine.
-- **Data**: URLSession, SwiftData, Codable.
+- **UI**: SwiftUI, SF Symbols, Custom ViewModifiers, Animation frameworks.
+- **Logic**: MVVM, Use Cases, Async/Await (Concurrency), Combine.
+- **Data**: URLSession (REST API), SwiftData (Persistence), Codable (JSON).
 
-## 📊 Core Features
+## ✨ Core Features
 
-- **Loan Tracking**: Filtered views for "Active Loans" vs. "History" with status-based design.
-- **Smart Stats**: Real-time calculation of "Due Soon" and "Overdue" metrics.
-- **QR Scanning**: Integrated AVFoundation for instant book barcode/QR identification.
-- **Book-Style UI**: Custom SwiftUI theme with a paper-like palette and signature book-texture card components.
-
+- **📖 Loan Management**: Sophisticated list tracking for "Active" vs. "History" with real-time status indicators.
+- **📈 Library Analytics**: Dynamic computation of "Due Soon" and "Overdue" metrics directly from the local store.
+- **🔍 Advanced Search**: Multi-parameter filtering engine with optimized performance for large book catalogs.
+- **🎨 Signature Design**: Custom-crafted SwiftUI theme with a parchment palette and paper-texture UI components.
