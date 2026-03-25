@@ -3,7 +3,7 @@ layout: default
 title: iOS Project
 permalink: /ios/
 ---
-# 🍎 CoolLib - Library Management iOS App
+# 🍎 CoolLib - iOS App
 
 <div style="margin: 10px 0 30px 15px;"> <a href="https://github.com/susui888/CoolLib2_iOS" target="_blank" 
        style="text-decoration: none; 

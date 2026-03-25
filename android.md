@@ -3,7 +3,7 @@ layout: default
 title: Android Project
 permalink: /android/
 ---
-# 🤖 CoolLib - Library Management Android App
+# 🤖 CoolLib - Android App
 
 <div style="margin: 10px 0 30px 15px;"> <a href="https://github.com/susui888/CoolLib_Android" target="_blank" 
        style="text-decoration: none; 

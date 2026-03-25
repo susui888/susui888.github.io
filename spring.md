@@ -3,7 +3,7 @@ layout: default
 title: Spring Project
 permalink: /spring/
 ---
-# 🍃 CoolLib - Library Management API
+# 🍃 CoolLib - Library Server API
 
 <div style="margin: 10px 0 30px 15px;"> 
     <a href="https://github.com/susui888/demo2" target="_blank" 
