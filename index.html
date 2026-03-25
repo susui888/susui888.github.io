@@ -5,7 +5,6 @@ permalink: /
 ---
 
 <style>
-    /* 全局颜色定义 */
     :root {
         --book-brown: #8B4513;
         --deep-brown: #5d2e0d;
@@ -16,54 +15,112 @@ permalink: /
     body {
         background-color: var(--paper-bg);
         color: var(--text-main);
-        font-family: 'Georgia', 'Times New Roman', serif; /* 简历正文建议使用衬线体，更有书卷气 */
+        font-family: 'Georgia', 'Times New Roman', serif;
     }
 
     .text-custom-brown { color: var(--book-brown) !important; }
     .bg-custom-brown { background-color: var(--book-brown) !important; }
     .border-custom-brown { border-color: var(--book-brown) !important; }
 
-    /* 标题装饰 */
     section h3 {
         border-bottom: 2px solid #eee5d8 !important;
         letter-spacing: 1px;
     }
 
-    /* 卡片样式优化 */
     .project-card {
-        background-color: #f8f5ee !important; /* 淡淡的羊皮纸色 */
+        background-color: #f8f5ee !important;
         border-left: 4px solid var(--book-brown) !important;
         border-radius: 0 8px 8px 0;
         transition: box-shadow 0.2s ease, background-color 0.2s ease;
     }
 
-    /* 侧边栏技能卡片 */
     .skills-sidebar {
         background-color: white;
         border: 1px solid #eee5d8 !important;
     }
 
-    /* Badge 样式微调 */
     .badge.bg-dark { background-color: var(--deep-brown) !important; }
     .badge.bg-secondary { background-color: #a69685 !important; }
 
-    /* 链接颜色 */
     .contact-link:hover {
         color: var(--book-brown) !important;
         text-decoration: underline !important;
+    }
+
+    .btn-outline-custom-brown:hover {
+        background-color: var(--book-brown);
+        color: white !important;
+    }
+
+    .btn-outline-custom-brown {
+        border: 1px solid var(--book-brown) !important;
+        color: var(--book-brown) !important;
+        background-color: transparent !important;
+        opacity: 1 !important;
+        display: flex !important;
+    }
+
+    .btn-outline-custom-brown:hover {
+        background-color: var(--book-brown) !important;
+        color: white !important;
+    }
+
+    .contact-link.badge:hover {
+        background-color: #eee5d8 !important; /* 浅棕色反馈 */
+        border-color: var(--book-brown) !important;
+        transition: all 0.2s ease;
+    }
+
+    .contact-icon-btn {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: white;
+        border: 1px solid #eee5d8;
+        color: var(--book-brown);
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    .contact-icon-btn:hover {
+        background-color: var(--book-brown);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .contact-icon-btn i {
+        font-size: 1.2rem;
     }
 </style>
 
 <div class="row align-items-center mb-5">
     <div class="col-md-7 col-lg-8 text-md-end order-md-1">
         <h1 class="display-4 fw-bold text-custom-brown mb-1">Ryan Su</h1>
-        <p class="lead text-dark fw-bold mb-3">Mathematics & Computer Science Student at Imperial College London</p>
 
-        <div class="d-flex flex-wrap justify-content-md-end gap-3 text-muted small">
-            <span><i class="bi bi-geo-alt"></i> London SW7 2BB</span>
-            <a href="mailto:yirong.su25@imperial.ac.uk" class="contact-link text-decoration-none text-muted">yirong.su25@imperial.ac.uk</a>
-            <a href="https://github.com/Ryan-yirongsu" class="contact-link text-decoration-none text-muted">GitHub: Ryan-yirongsu</a>
+        <p class="h4 text-dark fw-bold mb-1">Mathematician & Software Engineer</p>
+
+        <p class="text-secondary small fw-bold mb-4 text-uppercase" style="letter-spacing: 1px;">
+            MEng Candidate <span class="mx-2 text-custom-brown">|</span> Imperial College London
+        </p>
+
+        <div class="d-flex flex-wrap justify-content-md-end gap-3">
+            <a href="https://www.google.com/maps/search/?api=1&query=Imperial+College+London+South+Kensington" target="_blank" class="contact-icon-btn" title="London SW7 2BB">
+                <i class="bi bi-geo-alt-fill"></i>
+            </a>
+
+            <a href="mailto:yirong.su25@imperial.ac.uk" class="contact-icon-btn" title="Email">
+                <i class="bi bi-envelope-fill"></i>
+            </a>
+
+            <a href="https://github.com/Ryan-yirongsu" target="_blank" class="contact-icon-btn" title="GitHub">
+                <i class="bi bi-github"></i>
+            </a>
         </div>
+
     </div>
 
     <div class="col-md-5 col-lg-4 text-md-end mt-4 mt-md-0 order-md-2">
@@ -73,8 +130,7 @@ permalink: /
                  class="img-fluid rounded shadow-sm border p-1 bg-white mb-2"
                  style="max-width: 140px; aspect-ratio: 4/5; object-fit: cover;">
             <p class="small text-secondary mb-0 text-md-end" style="max-width: 200px; margin-left: auto; line-height: 1.4; font-style: italic;">
-                "Keen to apply quantitative and programming skills to real-world problems."
-            </p>
+                "MEng Joint Maths & Computing student at Imperial College London. Focused on algorithms, data modelling, and building scalable software solutions. "      </p>
         </div>
     </div>
 </div>
@@ -86,27 +142,48 @@ permalink: /
                 Education
             </h3>
 
-            <div class="mb-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold mb-1">Imperial College London</h5>
-                    <span class="badge bg-custom-brown rounded-pill">2025 – 2029</span>
-                </div>
-                <p class="text-custom-brown fw-semibold mb-2">MEng Mathematics and Computer Science</p>
-                <p class="small text-muted mb-2"><strong>Modules:</strong> Kotlin, C, Java & Assembly, Discrete Maths, Analysis, Linear Algebra, Groups, Calculus & Applications</p>
-                <div class="alert py-2 px-3 small d-inline-block border-custom-brown" style="background-color: #fff; color: var(--book-brown); border: 1px solid;">
-                    <strong>Computing Entrance Scholarship</strong> (2025–2026)
+            <div class="card border-0 shadow-sm mb-4 project-card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div>
+                            <h5 class="fw-bold mb-1 text-dark">Imperial College London</h5>
+                            <p class="text-custom-brown fw-semibold mb-0">MEng Mathematics and Computer Science</p>
+                        </div>
+                        <span class="badge bg-custom-brown rounded-pill px-3">2025 – 2029</span>
+                    </div>
+
+                    <div class="small text-secondary mb-3">
+                        <p class="mb-1"><strong>Modules:</strong> Kotlin, C, Java & Assembly, Discrete Maths, Analysis, Linear Algebra, Groups, Calculus & Applications</p>
+                    </div>
+
+                    <div class="alert py-2 px-3 m-0 small border-custom-brown d-inline-flex align-items-center" style="background-color: #fff; color: var(--book-brown); border: 1px solid;">
+                        <i class="bi bi-trophy-fill me-2"></i>
+                        <span><strong>Computing Entrance Scholarship</strong> (2025–2026)</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="mb-3">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold mb-1 text-dark">No.2 High School of East China Normal University</h5>
-                    <span class="text-muted small">Shanghai, 2022 – 2025</span>
+            <div class="card border-0 shadow-sm mb-4 project-card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h5 class="fw-bold mb-0 text-dark">No.2 High School of East China Normal University, Shanghai</h5>
+                        <span class="badge bg-custom-brown rounded-pill px-3">2022 – 2025</span>
+                    </div>
+                    <div class="row g-0 mt-2">
+                        <div class="col-12">
+                            <ul class="list-unstyled small text-secondary mb-0" style="line-height: 1.6;">
+                                <li class="mb-1">
+                                    <span class="fw-bold text-dark">AP:</span> CS A (5), Calculus BC (5), Statistics (5), Physics 1/2/C (4×5), Economics (GPA 4.0)
+                                </li>
+                                <li>
+                                    <span class="fw-bold text-dark">A Level:</span> Further Mathematics (A*) |
+                                    <span class="fw-bold text-dark">TMUA:</span> 9/9 |
+                                    <span class="fw-bold text-dark">AMC:</span> Top 1%
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <ul class="list-unstyled small mt-2">
-                    <li class="mb-1"><span class="fw-bold">AP:</span> CS A (5), Calculus BC (5), Statistics (5), Physics 1/2/C (4×5), Economics (GPA 4.0)</li>
-                    <li><span class="fw-bold">A Level:</span> Further Mathematics (A*) | <span class="fw-bold">TMUA:</span> 9/9 | <span class="fw-bold">AMC:</span> Top 1%</li>
-                </ul>
             </div>
         </section>
 
@@ -128,9 +205,19 @@ permalink: /
                 </div>
             </div>
 
-            <div class="ps-3 border-start border-3 border-custom-brown mb-4">
-                <h5 class="fw-bold mb-1">EPQ – Consumer Behaviour & Emotions</h5>
-                <p class="small text-muted mb-0">Grade A*. Applied HMMs, PCA and regression; tuned transition and emission matrices for predictive modelling.</p>
+            <div class="card border-0 shadow-sm mb-4 project-card">
+                <div class="card-body">
+                    <h5 class="fw-bold card-title text-dark">EPQ – Consumer Behaviour & Emotions</h5>
+                    <div class="card-text">
+                        <p class="small text-secondary mb-2" style="line-height: 1.6;">
+                            Grade A*. Applied Hidden Markov Models (HMMs), Principal Component Analysis (PCA) and regression; tuned transition and emission matrices for predictive modelling.
+                        </p>
+                        <ul class="small text-secondary" style="line-height: 1.6;">
+                            <li>Analyzed consumer emotional triggers using quantitative data modeling.</li>
+                            <li>Utilized PCA to reduce feature dimensionality for higher model accuracy.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -138,15 +225,18 @@ permalink: /
             <h3 class="h4 pb-2 mb-4 text-uppercase fw-bold text-custom-brown">
                 Experience
             </h3>
-            <div class="mb-3">
-                <div class="d-flex justify-content-between">
-                    <h5 class="fw-bold">Lumi Academy – Private Tutor</h5>
-                    <span class="text-muted small">Winter 2024 – Present</span>
+
+            <div class="card border-0 shadow-sm mb-4 project-card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h5 class="fw-bold mb-0 text-dark">Lumi Academy – Private Tutor</h5>
+                        <span class="text-muted small">Winter 2024 – Present</span>
+                    </div>
+                    <ul class="card-text small text-secondary" style="line-height: 1.6;">
+                        <li class="mb-1">Delivered 500+ hours of university maths & MAT preparation; 4 Oxford admits, +20% avg improvement.</li>
+                        <li>Designed and taught Java & Algorithms (data structures, recursion, sorting).</li>
+                    </ul>
                 </div>
-                <ul class="small mt-2 text-secondary" style="line-height: 1.6;">
-                    <li>Delivered 500+ hours of university maths & MAT preparation; 4 Oxford admits, +20% avg improvement.</li>
-                    <li>Designed and taught Java & Algorithms (data structures, recursion, sorting).</li>
-                </ul>
             </div>
         </section>
     </div>
@@ -177,6 +267,12 @@ permalink: /
             <div class="small">
                 <p class="mb-2"><span class="fw-bold">Societies:</span> Imperial Computing Society & Poker Club</p>
                 <p class="mb-0"><span class="fw-bold">Experience:</span> 10+ years Texas Hold’em experience (Quantitative Strategy).</p>
+            </div>
+
+            <div class="mt-4 pt-3 border-top">
+                <a href="/assets/pdf/Ryan_Su_Resume.pdf" class="btn btn-outline-custom-brown w-100 d-flex align-items-center justify-content-center gap-2" download>
+                    <i class="bi bi-download"></i> Download PDF
+                </a>
             </div>
         </div>
     </div>

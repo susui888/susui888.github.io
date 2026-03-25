@@ -4,33 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }} | Ryan Su</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/inter-ui@3.19.3/inter.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-sans/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url }}">
     <script src="{{ '/assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
+
     <style>
-        /* 1. 基础布局逻辑 */
         html, body { height: 100%; margin: 0; overflow: hidden; }
         main.d-flex { height: 100vh; overflow: hidden; }
         .sidebar { height: 100vh; overflow-y: auto; }
-        .main-content { height: 100vh; overflow-y: auto; }
+        .main-content { height: 100vh; overflow-y: auto; display: flex; flex-direction: column; }
 
-        /* 2. 全局书卷质感设定 (解决切换页面字体变动的问题) */
         :root {
-            --book-brown: #8B4513;   /* 经典书卷棕 */
-            --paper-bg: #fdfdfb;      /* 羊皮纸背景色 */
-            --text-main: #2c2c2c;     /* 深木炭黑文字 */
+            --book-brown: #8B4513;
+            --paper-bg: #fdfdfb;
+            --top-bar-bg: #f8f9fa;
+            --text-main: #2c2c2c;
+            --border-color: #eee5d8;
         }
 
         body {
             background-color: var(--paper-bg) !important;
-            /* 核心：强制所有页面使用衬线体，维持简历的正式感 */
-            font-family: 'Georgia', 'Times New Roman', serif !important;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
             color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* 3. 侧边栏样式全局化 */
         .sidebar.bg-light {
-            background-color: #f8f5ee !important; /* 略深的侧边栏底色 */
-            border-right: 1px solid #eee5d8;
+            background-color: #f8f5ee !important;
+            border-right: 1px solid var(--border-color);
         }
 
         .sidebar .nav-pills .nav-link.active {
@@ -46,15 +52,37 @@
             transition: all 0.2s ease;
         }
 
-        /* 4. 标题与正文颜色统一 */
         h1, h2, h3, h4, .text-custom-brown {
             color: var(--book-brown) !important;
-            font-family: 'Georgia', serif !important;
+            font-family: 'Geist Sans', sans-serif !important;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
-        /* 5. 保护技术内容：代码块不使用衬线体 */
+        .top-bar {
+            height: 45px;
+            min-height: 45px;
+            border-bottom: 1px solid var(--border-color);
+            background-color: var(--top-bar-bg);
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+            z-index: 10;
+            margin-bottom: 1.5rem;
+        }
+
+        .breadcrumb-text {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .breadcrumb-text b {
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
         code, pre {
-            font-family: 'JetBrains Mono', 'Consolas', monospace !important;
+            font-family: 'JetBrains Mono', monospace !important;
             background-color: rgba(0,0,0,0.05);
             padding: 2px 4px;
             border-radius: 4px;
@@ -69,7 +97,6 @@
 <script src="https://cdn.jsdelivr.net/npm/mermaid@11.13.0/dist/mermaid.min.js"></script>
 
 <script>
-    // 1. 初始化
     mermaid.initialize({
         startOnLoad: false,
         securityLevel: 'loose',
@@ -79,24 +106,20 @@
             primaryTextColor: '#8B4513',
             primaryBorderColor: '#8B4513',
             lineColor: '#5d2e0d',
-            fontFamily: 'Georgia, serif'
+            fontFamily: 'Inter, sans-serif'
         }
     });
 
-    // 2. 核心：监听 Bootstrap 展开事件
     document.addEventListener('shown.bs.collapse', function (event) {
         const container = event.target;
         const mermaidDiv = container.querySelector('.mermaid');
 
-        // 只有当内部有 mermaid 元素且还没被渲染过时才执行
         if (mermaidDiv && !mermaidDiv.querySelector('svg')) {
             const id = 'mermaid-svg-' + Math.random().toString(36).substr(2, 9);
             const content = mermaidDiv.textContent.trim();
 
-            // 手动调用 render 函数生成 SVG 代码
             mermaid.render(id, content).then(({ svg }) => {
                 mermaidDiv.innerHTML = svg;
-                // 强制调整 SVG 宽度以适应容器
                 const svgElement = mermaidDiv.querySelector('svg');
                 if (svgElement) {
                     svgElement.style.maxWidth = '100%';
@@ -109,7 +132,6 @@
     });
 </script>
 
-
 {% include icons.svg %}
 
 <main class="d-flex flex-nowrap">
@@ -117,15 +139,14 @@
 
     <div class="b-example-divider b-example-vr"></div>
 
-    <div class="flex-grow-1 p-3 main-content">
-        <nav class="navbar navbar-expand-lg navbar-light" style="min-height: 40px; background-color: var(--paper-bg);">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse">
-                </div>
+    <div class="flex-grow-1 main-content">
+        <header class="top-bar">
+            <div class="breadcrumb-text">
+                Ryan Su / <b>{{ page.title }}</b>
             </div>
-        </nav>
+        </header>
 
-        <div class="container mt-4">
+        <div class="container mt-5 mb-5" style="max-width: 900px;">
             {{ content }}
         </div>
     </div>
