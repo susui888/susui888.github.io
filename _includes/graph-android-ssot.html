@@ -1,0 +1,44 @@
+<div class="project-card p-3 mb-4" style="background-color: #f8f5ee; border-left: 5px solid #8B4513;">
+    <div class="d-flex justify-content-between align-items-center">
+        <span class="fw-bold text-custom-brown"><i class="bi bi-arrow-down-up me-2"></i> Data Fetching Logic (Search vs Detail)</span>
+        <button class="btn btn-sm"
+                style="border: 1px solid #8B4513; color: #8B4513;"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#fetchingCollapse">
+            Show / Hide
+        </button>
+    </div>
+
+    <div class="collapse" id="fetchingCollapse">
+        <div class="mt-4 pb-3">
+            <div class="mermaid" style="width: 100%; margin: 0 auto;">
+                graph TD
+                %% 1. Search Logic (Top)
+                subgraph Search_Scenario ["BookScreen - Search (Remote Only)"]
+                AS[Search UI] -->|Query| ASR[Retrofit API]
+                ASR -->|Return List| AS
+                end
+
+                %% 强制换行：连接两个子图的隐藏线
+                Search_Scenario --- Detail_Scenario
+                linkStyle 2 stroke:transparent,stroke-width:0px;
+
+                %% 2. Detail Logic (Bottom - Imperative)
+                subgraph Detail_Scenario ["BookDetailScreen - Cache First"]
+                AD[Detail UI] -->|Request ID| ARepo[BookRepository]
+                ARepo -->|Query| ADB[(Room DB)]
+
+                ADB -->|Data Found| AD
+                ADB -->|Not Found| ADR[Retrofit API]
+
+                ADR -->|Save to DB| ADB
+                ADR -->|Return Data| AD
+                end
+            </div>
+            <p class="small text-muted text-center mt-3 mb-0">
+                *Search provides real-time results, while Details use an <strong>on-demand caching</strong> strategy.*
+            </p>
+        </div>
+    </div>
+</div>

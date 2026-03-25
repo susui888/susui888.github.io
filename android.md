@@ -34,6 +34,10 @@ permalink: /android/
 - **Reactive Data**: Built a real-time UI pipeline using **StateFlow/SharedFlow** and **Room** for offline persistence.
 - **Testing**: Achieved high reliability with **Unit Tests (MockK)** and **UI Tests (Compose Rule)** covering critical flows like Auth, Cart, and Loan History.
 
+{% include graph-android-dataflow.html %}
+
+{% include graph-android-ssot.html %}
+
 ## 🛠 Tech Stack
 
 - **UI**: Jetpack Compose, Material 3, Coil, Compose Navigation.

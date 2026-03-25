@@ -35,9 +35,7 @@ permalink: /spring/
 
 {% include graph-architecture.html %}
 
-{% include graph-authentication.html %} 
-
-{% include graph-database.html %}
+{% include graph-authentication.html %}
 
 ## 🛠 Tech Stack
 

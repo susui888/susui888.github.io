@@ -34,6 +34,10 @@ permalink: /ios/
 - **Reactive UI**: Built a fluid UI using **SwiftUI** and **Combine**, ensuring real-time state synchronization across all views.
 - **Testing**: Robust test suite using **XCTest** (or Swift Testing) covering core business logic and repository mapping.
 
+{% include graph-ios-dataflow.html %}
+
+{% include graph-ios-ssot.html%}
+
 ## 🛠 Tech Stack
 
 - **UI**: SwiftUI, SF Symbols, Custom ViewModifiers.
