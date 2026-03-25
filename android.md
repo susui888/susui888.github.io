@@ -46,7 +46,14 @@ permalink: /android/
 
 ## ✨ Core Features
 
-- **📖 Loan Tracking**: Optimized list views for "Active" vs. "History" using status-driven UI components.
-- **📈 Smart Insights**: Real-time calculation of library metrics such as "Due Soon" and "Overdue" items.
-- **🔍 Intelligent Search**: Multi-criteria filtering logic with localized caching for instantaneous results.
-- **🎨 Book-Style UI**: Custom-themed design system with a signature paper-like palette and textured components.
+- **Loan Tracking**: Optimized list views for "Active" vs. "History" using status-driven UI components.
+- **Smart Insights**: Real-time calculation of library metrics such as "Due Soon" and "Overdue" items.
+- **Intelligent Search**: Multi-criteria filtering logic with localized caching for instantaneous results.
+- **Book-Style UI**: Custom-themed design system with a signature paper-like palette and textured components.
+
+{% include gif.html
+id="androidDemo"
+path="/assets/img/android1.gif"
+title="CoolLib Android App Preview"
+icon="bi-android2"
+description="Demonstrating: Book Search, Real-time Validation, and Borrowing Flow." %}

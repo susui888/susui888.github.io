@@ -46,7 +46,7 @@ permalink: /ios/
 
 ## ✨ Core Features
 
-- **📖 Loan Management**: Sophisticated list tracking for "Active" vs. "History" with real-time status indicators.
-- **📈 Library Analytics**: Dynamic computation of "Due Soon" and "Overdue" metrics directly from the local store.
-- **🔍 Advanced Search**: Multi-parameter filtering engine with optimized performance for large book catalogs.
-- **🎨 Signature Design**: Custom-crafted SwiftUI theme with a parchment palette and paper-texture UI components.
+- **Loan Management**: Sophisticated list tracking for "Active" vs. "History" with real-time status indicators.
+- **Library Analytics**: Dynamic computation of "Due Soon" and "Overdue" metrics directly from the local store.
+- **Advanced Search**: Multi-parameter filtering engine with optimized performance for large book catalogs.
+- **Signature Design**: Custom-crafted SwiftUI theme with a parchment palette and paper-texture UI components.

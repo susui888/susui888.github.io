@@ -1,0 +1,34 @@
+<div class="project-card p-3 mb-4" style="background-color: #f8f5ee; border-left: 5px solid #8B4513; border-radius: 4px;">
+    <div class="d-flex justify-content-between align-items-center">
+        <span class="fw-bold" style="color: #8B4513;">
+            <i class="bi {{ include.icon | default: 'bi-play-circle' }} me-2"></i>
+            {{ include.title | default: 'Live Demonstration' }}
+        </span>
+        <button class="btn btn-sm"
+                style="border: 1px solid #8B4513; color: #8B4513;"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#{{ include.id }}">
+            Show / Hide
+        </button>
+    </div>
+
+    <div class="collapse" id="{{ include.id }}">
+        <div class="mt-4 text-center">
+            <img data-src="{{ include.path | relative_url }}"
+                 id="img-{{ include.id }}"
+                 alt="{{ include.title }}"
+                 style="width: 260px; ...">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('{{ include.id }}').addEventListener('show.bs.collapse', function () {
+            const img = document.getElementById('img-{{ include.id }}');
+            if (img && img.dataset.src) {
+                img.src = img.dataset.src;
+                delete img.dataset.src; // 确保只加载一次
+            }
+        });
+    </script>
+</div>
