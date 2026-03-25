@@ -3,7 +3,7 @@ layout: default
 title: Android Project
 permalink: /android/
 ---
-# 🤖 CoolLib - Android App
+# <i class="bi bi-android2"></i> CoolLib - Android App
 
 <div style="margin: 10px 0 30px 15px;"> <a href="https://github.com/susui888/CoolLib_Android" target="_blank" 
        style="text-decoration: none; 
@@ -26,7 +26,7 @@ permalink: /android/
 
 **CoolLib** is a high-performance library management ecosystem built with **Jetpack Compose** and **Clean Architecture**. It features a "Book-Style" custom design system and enterprise-grade data handling.
 
-## 🚀 Key Technical Wins
+## <i class="bi bi-cpu-fill"></i> Key Technical Wins
 
 - **Clean Architecture**: Implemented strict **MVVM** with isolated layers (Data, Domain, UI) using **Kotlin First** principles for high maintainability.
 - **Performance Tuning**: Reduced data load times by **60%** via **Coroutines (`async/awaitAll`)** for concurrent repository-level data mapping.
@@ -38,13 +38,13 @@ permalink: /android/
 
 {% include graph-android-ssot.html %}
 
-## 🛠 Tech Stack
+## <i class="bi bi-stack"></i> Tech Stack
 
 - **UI**: Jetpack Compose, Material 3, Coil (Image Loading), Compose Navigation.
 - **Logic**: MVVM, Use Cases, Coroutines, Flow, Hilt (DI).
 - **Data**: Retrofit (REST API), Moshi (JSON), Room (Local DB), SharedPreferences.
 
-## ✨ Core Features
+## <i class="bi bi-command"></i> Core Features
 
 - **Loan Tracking**: Optimized list views for "Active" vs. "History" using status-driven UI components.
 - **Smart Insights**: Real-time calculation of library metrics such as "Due Soon" and "Overdue" items.

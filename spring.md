@@ -3,7 +3,7 @@ layout: default
 title: Spring Project
 permalink: /spring/
 ---
-# 🍃 CoolLib - Library Server API
+# <i class="bi bi-database-fill"></i> CoolLib - Library Server API
 
 <div style="margin: 10px 0 30px 15px;"> 
     <a href="https://github.com/susui888/demo2" target="_blank" 
@@ -27,7 +27,7 @@ permalink: /spring/
 
 **CoolLib Backend** is a robust, stateless REST service built with **Spring Boot 3.4** and **Kotlin**, serving as the central orchestration hub for the CoolLib mobile ecosystem.
 
-## 🚀 Key Technical Wins
+## <i class="bi bi-diagram-3-fill"></i> Key Technical Wins
 
 - **Layered Architecture**: Implemented a strict **Controller-Service-Repository** pattern for high maintainability.
 - **Secure Sessions**: Engineered **JWT-based Authentication** with Spring Security to manage secure mobile access.
@@ -38,19 +38,19 @@ permalink: /spring/
 
 {% include graph-authentication.html %}
 
-## 🛠 Tech Stack
+## <i class="bi bi-server"></i> Tech Stack
 
 - **Server**: Spring Boot 3.4, Kotlin (JVM 17), Maven.
 - **Security**: JWT (JSON Web Token), Spring Security, BCrypt.
 - **Data**: PostgreSQL, Spring Data JPA, Hibernate.
 
-## ✨ Core Features
+## <i class="bi bi-shield-check"></i> Core Features
 
 - **Auth**: Secure user registration and token-based login.
 - **Search**: Advanced server-side filtering and full-text search capabilities.
 - **Transactions**: Atomic borrowing operations and history tracking.
 - **API Docs**: Standardized JSON response structures for cross-platform compatibility.
 
-## 📱 Mobile Connectivity
+## <i class="bi bi-cloud-arrow-up-fill"></i> Mobile Connectivity
 
 Both **Android (Jetpack Compose)** and **iOS (SwiftUI)** clients interact with this backend via REST. Secure endpoints are protected by the `Authorization: Bearer <token>` header, ensuring data integrity across the ecosystem.

@@ -14,17 +14,14 @@
         <div class="mt-4 pb-3">
             <div class="mermaid" style="width: 100%; margin: 0 auto;">
                 graph TD
-                %% 1. Search Logic (Top)
                 subgraph Search_Scenario ["BookScreen - Search (Remote Only)"]
                 AS[Search UI] -->|Query| ASR[Retrofit API]
                 ASR -->|Return List| AS
                 end
 
-                %% 强制换行：连接两个子图的隐藏线
                 Search_Scenario --- Detail_Scenario
                 linkStyle 2 stroke:transparent,stroke-width:0px;
-
-                %% 2. Detail Logic (Bottom - Imperative)
+                
                 subgraph Detail_Scenario ["BookDetailScreen - Cache First"]
                 AD[Detail UI] -->|Request ID| ARepo[BookRepository]
                 ARepo -->|Query| ADB[(Room DB)]

@@ -3,7 +3,7 @@ layout: default
 title: iOS Project
 permalink: /ios/
 ---
-# 🍎 CoolLib - iOS App
+# <i class="bi bi-apple"></i> CoolLib - iOS App
 
 <div style="margin: 10px 0 30px 15px;"> <a href="https://github.com/susui888/CoolLib2_iOS" target="_blank" 
        style="text-decoration: none; 
@@ -26,7 +26,7 @@ permalink: /ios/
 
 **CoolLib** is a high-performance library management ecosystem built with **SwiftUI** and **Clean Architecture**. It delivers a premium native experience leveraging modern iOS frameworks and reactive design patterns.
 
-## 🚀 Key Technical Wins
+## <i class="bi bi-cpu"></i> Key Technical Wins
 
 - **Protocol-Oriented Architecture**: Implemented **Clean Architecture (MVVM)** with strict abstraction layers, utilizing **Swift Protocols** for decoupled and testable logic.
 - **Modern Concurrency**: Leveraged **Structured Concurrency (Async/Await)** to handle parallel data fetching and repository mapping without callback nesting.
@@ -38,13 +38,13 @@ permalink: /ios/
 
 {% include graph-ios-ssot.html%}
 
-## 🛠 Tech Stack
+## <i class="bi bi-layers-half"></i> Tech Stack
 
 - **UI**: SwiftUI, SF Symbols, Custom ViewModifiers, Animation frameworks.
 - **Logic**: MVVM, Use Cases, Async/Await (Concurrency), Combine.
 - **Data**: URLSession (REST API), SwiftData (Persistence), Codable (JSON).
 
-## ✨ Core Features
+## <i class="bi bi-app-indicator"></i> Core Features
 
 - **Loan Management**: Sophisticated list tracking for "Active" vs. "History" with real-time status indicators.
 - **Library Analytics**: Dynamic computation of "Due Soon" and "Overdue" metrics directly from the local store.
