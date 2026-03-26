@@ -1,56 +1,84 @@
 ---
 layout: default
-title: Spring Project
+title: Library Management System — Spring Backend
 permalink: /spring/
 ---
-# <i class="bi bi-database-fill"></i> CoolLib - Library Server API
 
-<div style="margin: 10px 0 30px 15px;"> 
-    <a href="https://github.com/susui888/demo2" target="_blank" 
-       style="text-decoration: none; 
-              display: inline-flex; 
-              align-items-center; 
-              border: 1.5px solid #8B4513; 
-              color: #8B4513; 
-              background-color: transparent; 
-              padding: 6px 16px; 
-              border-radius: 20px; 
-              font-weight: 600; 
-              font-size: 14px; 
-              transition: all 0.3s ease;">
-        <svg style="margin-right: 8px;" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-        </svg>
-        View Source Code
-    </a>
+<div class="card border-0 shadow-sm mb-5" style="background-color: #fdfdfb; border: 1px solid #eee5d8 !important;">
+    <div class="card-body p-4">
+        <div class="d-flex align-items-center mb-3">
+            <div class="bg-custom-brown-light p-2 rounded-3 me-3" style="background-color: rgba(139, 69, 19, 0.1);">
+                <i class="bi bi-database-fill fs-3" style="color: #8B4513;"></i>
+            </div>
+            <div>
+                <h3 class="mb-0 text-custom-brown" style="font-family: 'Geist Sans', sans-serif;">CoolLib — Distributed Library Core API</h3>
+                <div class="mt-1 d-flex flex-wrap gap-1">
+                    <span class="badge rounded-pill" style="background-color: #8B4513;">Spring Boot 3.4</span>
+                    <span class="badge rounded-pill" style="background-color: #6c757d;">PostgreSQL</span>
+                    <span class="badge rounded-pill" style="background-color: #0d6efd;">JWT Security</span>
+                    <span class="badge rounded-pill bg-dark">Kotlin</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-muted mb-4">
+            A high-performance backend ecosystem engineered with <b>Clean Architecture</b>. 
+            It implements a strict separation between <b>JPA Entities</b> and <b>DTOs</b>, 
+            serving as the central orchestration hub for both Android (Kotlin) and iOS (SwiftUI) clients.
+        </p>
+
+        <div class="d-flex gap-2">
+            <a href="https://github.com/susui888/demo2" target="_blank" class="btn btn-sm btn-outline-dark rounded-pill px-3">
+                <i class="bi bi-github me-1"></i> Source Code
+            </a>
+            <a href="#core-features" class="btn btn-sm btn-outline-brown rounded-pill px-3" style="border-color: #8B4513; color: #8B4513;">
+                <i class="bi bi-shield-lock me-1"></i> API Security
+            </a>
+        </div>
+    </div>
 </div>
 
-**CoolLib Backend** is a robust, stateless REST service built with **Spring Boot 3.4** and **Kotlin**, serving as the central orchestration hub for the CoolLib mobile ecosystem.
+## <i class="bi bi-layers-half me-2"></i> Project Overview
 
-## <i class="bi bi-diagram-3-fill"></i> Key Technical Wins
+**CoolLib Backend** is a robust RESTful service built with **Spring Boot 3.4** and **Kotlin**. Beyond standard CRUD operations, it manages complex business logic layers to ensure data consistency, security, and seamless synchronization across the mobile ecosystem.
 
-- **Layered Architecture**: Implemented a strict **Controller-Service-Repository** pattern for high maintainability.
-- **Secure Sessions**: Engineered **JWT-based Authentication** with Spring Security to manage secure mobile access.
-- **Persistence Layer**: Leveraged **PostgreSQL** with **Spring Data JPA** for transaction safety and efficient querying.
-- **Performance**: Optimized API response times through **DTO projection** and indexed search queries.
+## <i class="bi bi-diagram-3-fill me-2"></i> Key Technical Wins
 
+* **Layered Architecture**: Strictly follows the **Controller-Service-Repository** pattern, ensuring complete decoupling between business logic and data access layers.
+* **Secure Sessions**: Integrated **Spring Security** with **JWT (JSON Web Tokens)** to provide a stateless authentication mechanism tailored for mobile clients.
+* **Persistence Layer**: Leverages **PostgreSQL** and **Spring Data JPA**, ensuring the atomicity of borrowing operations through **@Transactional** services.
+* **Performance Optimization**: Reduced network overhead via **DTO Projections** and optimized database indexing for high-speed book searches.
+
+---
+
+### <i class="bi bi-cpu-fill me-2"></i> System Architecture
 {% include graph-architecture.html %}
 
+### <i class="bi bi-lock-fill me-2"></i> Authentication Flow
 {% include graph-authentication.html %}
 
-## <i class="bi bi-server"></i> Tech Stack
+---
 
-- **Server**: Spring Boot 3.4, Kotlin (JVM 17), Maven.
-- **Security**: JWT (JSON Web Token), Spring Security, BCrypt.
-- **Data**: PostgreSQL, Spring Data JPA, Hibernate.
+## <i class="bi bi-server me-2"></i> Tech Stack
 
-## <i class="bi bi-shield-check"></i> Core Features
+* **Core Framework**: Spring Boot 3.4, Kotlin (JVM 17), Maven
+* **Security**: JWT, Spring Security, BCrypt Password Hashing
+* **Data Management**: PostgreSQL, Spring Data JPA, Hibernate ORM
+* **Standards**: RESTful API Design, Docker-Ready Deployment
 
-- **Auth**: Secure user registration and token-based login.
-- **Search**: Advanced server-side filtering and full-text search capabilities.
-- **Transactions**: Atomic borrowing operations and history tracking.
-- **API Docs**: Standardized JSON response structures for cross-platform compatibility.
+## <i class="bi bi-shield-check me-2" id="core-features"></i> Core Features
 
-## <i class="bi bi-cloud-arrow-up-fill"></i> Mobile Connectivity
+* **Identity Management**: Secure user registration and token-based login systems.
+* **Advanced Search**: Server-side pagination, multi-parameter filtering, and full-text search capabilities.
+* **Transaction Logic**: Atomic borrowing/returning operations with real-time inventory validation and user quota enforcement.
+* **Standardized Responses**: Unified JSON response structures with custom error codes to ensure cross-platform compatibility.
 
-Both **Android (Jetpack Compose)** and **iOS (SwiftUI)** clients interact with this backend via REST. Secure endpoints are protected by the `Authorization: Bearer <token>` header, ensuring data integrity across the ecosystem.
+## <i class="bi bi-cloud-arrow-up-fill me-2"></i> Mobile Connectivity
+
+Both **Android (Jetpack Compose)** and **iOS (SwiftUI)** clients interact with this backend through standard REST endpoints. All protected resources require an `Authorization: Bearer <token>` header, maintaining data integrity and user privacy across the CoolLib ecosystem.
+
+<hr class="my-5">
+
+<div class="small text-muted text-center">
+    <p><i class="bi bi-code-slash me-1"></i> Developed with passion by Ryan Su &copy; 2026</p>
+</div>

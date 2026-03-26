@@ -1,55 +1,78 @@
 ---
 layout: default
-title: Android Project
+title: Library Management System — Android App
 permalink: /android/
 ---
-# <i class="bi bi-android2"></i> CoolLib - Android App
 
-<div style="margin: 10px 0 30px 15px;"> <a href="https://github.com/susui888/CoolLib_Android" target="_blank" 
-       style="text-decoration: none; 
-              display: inline-flex; 
-              align-items-center; 
-              border: 1.5px solid #8B4513; 
-              color: #8B4513; 
-              background-color: transparent; 
-              padding: 6px 16px; 
-              border-radius: 20px; 
-              font-weight: 600; 
-              font-size: 14px; 
-              transition: all 0.3s ease;">
-        <svg style="margin-right: 8px;" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-        </svg>
-        View Source Code
-    </a>
+<div class="card border-0 shadow-sm mb-5" style="background-color: #fdfdfb; border: 1px solid #eee5d8 !important;">
+    <div class="card-body p-4">
+        <div class="d-flex align-items-center mb-3">
+            <div class="bg-custom-brown-light p-2 rounded-3 me-3" style="background-color: rgba(139, 69, 19, 0.1);">
+                <i class="bi bi-android2 fs-3" style="color: #8B4513;"></i>
+            </div>
+            <div>
+                <h3 class="mb-0 text-custom-brown" style="font-family: 'Geist Sans', sans-serif;">CoolLib — Native Android Client</h3>
+                <div class="mt-1 d-flex flex-wrap gap-1">
+                    <span class="badge rounded-pill" style="background-color: #3DDC84; color: #000;">Jetpack Compose</span>
+                    <span class="badge rounded-pill" style="background-color: #8B4513;">Kotlin</span>
+                    <span class="badge rounded-pill" style="background-color: #6c757d;">MVVM</span>
+                    <span class="badge rounded-pill bg-dark">Hilt DI</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-muted mb-4">
+            A high-performance library management mobile application featuring a <b>"Book-Style"</b> custom design system. 
+            Built with <b>Clean Architecture</b>, it provides an offline-first experience with real-time synchronization to the Spring backend.
+        </p>
+
+        <div class="d-flex gap-2">
+            <a href="https://github.com/susui888/CoolLib_Android" target="_blank" class="btn btn-sm btn-outline-dark rounded-pill px-3">
+                <i class="bi bi-github me-1"></i> View Repository
+            </a>
+            <a href="#core-features" class="btn btn-sm btn-outline-brown rounded-pill px-3" style="border-color: #8B4513; color: #8B4513;">
+                <i class="bi bi-palette me-1"></i> Design System
+            </a>
+        </div>
+    </div>
 </div>
 
-**CoolLib** is a high-performance library management ecosystem built with **Jetpack Compose** and **Clean Architecture**. It features a "Book-Style" custom design system and enterprise-grade data handling.
+## <i class="bi bi-layers-half me-2"></i> Architectural Philosophy
 
-## <i class="bi bi-cpu-fill"></i> Key Technical Wins
+**CoolLib Android** is engineered using **Modern Android Development (MAD)** practices. By implementing a reactive data pipeline and strict layer separation, the app ensures a fluid user experience even under complex data states and varying network conditions.
 
-- **Clean Architecture**: Implemented strict **MVVM** with isolated layers (Data, Domain, UI) using **Kotlin First** principles for high maintainability.
-- **Performance Tuning**: Reduced data load times by **60%** via **Coroutines (`async/awaitAll`)** for concurrent repository-level data mapping.
-- **Dependency Injection**: Engineered a robust DI graph with **Hilt**, utilizing custom **Qualifiers** (`@IoDispatcher`) for granular threading control.
-- **Reactive Pipeline**: Built a real-time data flow using **StateFlow/SharedFlow** integrated with **Room** for an "Offline-First" experience.
-- **Quality Assurance**: Maintained system stability with **MockK** unit tests and **Compose Rule** UI tests covering core business logic.
+## <i class="bi bi-cpu-fill me-2"></i> Key Technical Wins
 
+* **Clean Architecture**: Implemented strict **MVVM** with isolated Data, Domain, and UI layers using **Kotlin-First** principles for maximum maintainability.
+* **Performance Tuning**: Reduced data load times by **60%** via **Coroutines (`async/awaitAll`)** for concurrent repository-level data mapping and transformation.
+* **Dependency Injection**: Engineered a robust DI graph with **Hilt**, utilizing custom **Qualifiers** (`@IoDispatcher`) for granular threading control.
+* **Reactive Pipeline**: Built a real-time data flow using **StateFlow/SharedFlow** integrated with **Room** for a reliable "Offline-First" experience.
+* **Quality Assurance**: Maintained system stability with **MockK** unit tests and **Compose Rule** UI tests covering core business logic.
+
+---
+
+### <i class="bi bi-diagram-3-fill me-2"></i> Data Flow Architecture
 {% include graph-android-dataflow.html %}
 
+### <i class="bi bi-check-all me-2"></i> Single Source of Truth (SSOT)
 {% include graph-android-ssot.html %}
 
-## <i class="bi bi-stack"></i> Tech Stack
+---
 
-- **UI**: Jetpack Compose, Material 3, Coil (Image Loading), Compose Navigation.
-- **Logic**: MVVM, Use Cases, Coroutines, Flow, Hilt (DI).
-- **Data**: Retrofit (REST API), Moshi (JSON), Room (Local DB), SharedPreferences.
+## <i class="bi bi-stack me-2"></i> Tech Stack
 
-## <i class="bi bi-command"></i> Core Features
+* **UI Framework**: Jetpack Compose, Material 3, Coil (Image Loading), Compose Navigation
+* **Logic & Concurrency**: MVVM, Use Cases, Coroutines, Kotlin Flow, Hilt (DI)
+* **Data Persistence**: Retrofit (REST API), Moshi (JSON), Room (Local DB), DataStore
 
-- **Loan Tracking**: Optimized list views for "Active" vs. "History" using status-driven UI components.
-- **Smart Insights**: Real-time calculation of library metrics such as "Due Soon" and "Overdue" items.
-- **Intelligent Search**: Multi-criteria filtering logic with localized caching for instantaneous results.
-- **Book-Style UI**: Custom-themed design system with a signature paper-like palette and textured components.
+## <i class="bi bi-command me-2" id="core-features"></i> Core Features
+
+* **Loan Tracking**: Optimized list views for "Active" vs. "History" using status-driven UI components.
+* **Smart Insights**: Real-time calculation of library metrics such as "Due Soon" and "Overdue" status.
+* **Intelligent Search**: Multi-criteria filtering logic with localized caching for instantaneous results.
+* **Book-Style UI**: A custom-themed design system with a signature paper-like palette and textured components.
+
+## <i class="bi bi-phone-vibrate me-2"></i> UI Preview
 
 {% include gif.html
 id="androidDemo"
@@ -57,3 +80,9 @@ path="/assets/img/android1.gif"
 title="CoolLib Android App Preview"
 icon="bi-android2"
 description="Demonstrating: Book Search, Real-time Validation, and Borrowing Flow." %}
+
+<hr class="my-5">
+
+<div class="small text-muted text-center">
+    <p><i class="bi bi-code-slash me-1"></i> Engineered by Ryan Su &copy; 2026</p>
+</div>
