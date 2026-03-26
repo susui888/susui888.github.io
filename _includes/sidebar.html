@@ -1,49 +1,60 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 bg-light text-dark sidebar" style="width: 280px; min-height: 100vh;">
-    <a href="{{ '/' | relative_url }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <img src="{{ '/assets/img/pikachu.jpg' | relative_url }}"
-             alt="Portfolio Logo"
-             width="40"
-             height="40"
-             class="rounded-circle me-2 border shadow-sm"
-             style="object-fit: cover;">
-        <span class="fs-4 fw-bold text-uppercase" style="letter-spacing: 1px; color: #8B4513;">Portfolio</span>
-    </a>
+<div class="offcanvas-md offcanvas-start sidebar bg-light flex-column flex-shrink-0 p-3"
+     tabindex="-1"
+     id="sidebarMenu"
+     style="width: 280px; min-height: 100vh;">
 
-    <hr>
+    <div class="offcanvas-header d-md-none border-bottom mb-3">
+        <h5 class="offcanvas-title text-custom-brown" id="sidebarMenuLabel">Navigation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+    </div>
 
-    <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-            <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% else %}text-dark{% endif %}">
-                <i class="bi bi-person-badge me-2"></i>
-                About Me
-            </a>
-        </li>
+    <div class="offcanvas-body d-flex flex-column p-0">
+        <a href="{{ '/' | relative_url }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <img src="{{ '/assets/img/pikachu.jpg' | relative_url }}"
+                 alt="Portfolio Logo"
+                 width="40"
+                 height="40"
+                 class="rounded-circle me-2 border shadow-sm"
+                 style="object-fit: cover;">
+            <span class="fs-4 fw-bold text-uppercase" style="letter-spacing: 1px; color: #8B4513;">Portfolio</span>
+        </a>
 
-        <li>
-            <a href="{{ '/spring/' | relative_url }}" class="nav-link {% if page.url contains '/spring/' %}active{% else %}text-dark{% endif %}">
-                <i class="bi bi-hdd-network me-2"></i>
-                Backend / Spring
-            </a>
-        </li>
+        <hr>
 
-        <li>
-            <a href="{{ '/android/' | relative_url }}" class="nav-link {% if page.url contains '/android/' %}active{% else %}text-dark{% endif %}">
-                <i class="bi bi-android2 me-2"></i>
-                Android / Kotlin
-            </a>
-        </li>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% else %}text-dark{% endif %}">
+                    <i class="bi bi-person-badge me-2"></i>
+                    About Me
+                </a>
+            </li>
 
-        <li>
-            <a href="{{ '/ios/' | relative_url }}" class="nav-link {% if page.url contains '/ios/' %}active{% else %}text-dark{% endif %}">
-                <i class="bi bi-apple me-2"></i>
-                iOS / SwiftUI
-            </a>
-        </li>
-    </ul>
+            <li>
+                <a href="{{ '/spring/' | relative_url }}" class="nav-link {% if page.url contains '/spring/' %}active{% else %}text-dark{% endif %}">
+                    <i class="bi bi-hdd-network me-2"></i>
+                    Backend / Spring
+                </a>
+            </li>
 
-    <hr>
+            <li>
+                <a href="{{ '/android/' | relative_url }}" class="nav-link {% if page.url contains '/android/' %}active{% else %}text-dark{% endif %}">
+                    <i class="bi bi-android2 me-2"></i>
+                    Android / Kotlin
+                </a>
+            </li>
 
-    <div class="small text-muted px-2">
-        <span>© 2026 Ryan Su</span>
+            <li>
+                <a href="{{ '/ios/' | relative_url }}" class="nav-link {% if page.url contains '/ios/' %}active{% else %}text-dark{% endif %}">
+                    <i class="bi bi-apple me-2"></i>
+                    iOS / SwiftUI
+                </a>
+            </li>
+        </ul>
+
+        <hr>
+
+        <div class="small text-muted px-2">
+            <span>© 2026 Ryan Su</span>
+        </div>
     </div>
 </div>

@@ -14,11 +14,7 @@
     <script src="{{ '/assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
 
     <style>
-        html, body { height: 100%; margin: 0; overflow: hidden; }
-        main.d-flex { height: 100vh; overflow: hidden; }
-        .sidebar { height: 100vh; overflow-y: auto; }
-        .main-content { height: 100vh; overflow-y: auto; display: flex; flex-direction: column; }
-
+        /* --- Core Root Variables (Kept as is) --- */
         :root {
             --book-brown: #8B4513;
             --paper-bg: #fdfdfb;
@@ -27,13 +23,31 @@
             --border-color: #eee5d8;
         }
 
+        /* --- General Typography & Colors (Universal) --- */
         body {
             background-color: var(--paper-bg) !important;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
             color: var(--text-main);
             -webkit-font-smoothing: antialiased;
+            margin: 0;
         }
 
+        h1, h2, h3, h4, .text-custom-brown {
+            color: var(--book-brown) !important;
+            font-family: 'Geist Sans', sans-serif !important;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        code, pre {
+            font-family: 'JetBrains Mono', monospace !important;
+            background-color: rgba(0,0,0,0.05);
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        /* --- Sidebar Appearance (Kept important styles) --- */
         .sidebar.bg-light {
             background-color: #f8f5ee !important;
             border-right: 1px solid var(--border-color);
@@ -52,13 +66,27 @@
             transition: all 0.2s ease;
         }
 
-        h1, h2, h3, h4, .text-custom-brown {
-            color: var(--book-brown) !important;
-            font-family: 'Geist Sans', sans-serif !important;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+        /* --- Layout Logic (IMPORTANT: Conditional split) --- */
+
+        /* Desktop View: Keep your original height-constrained layout */
+        @media (min-width: 768px) {
+            html, body { height: 100%; overflow: hidden; }
+            main.d-flex { height: 100vh; overflow: hidden; }
+            .sidebar { height: 100vh; overflow-y: auto; width: 280px; }
+            .main-content { height: 100vh; overflow-y: auto; display: flex; flex-direction: column; }
         }
 
+        /* Mobile View: Allow natural scrolling and responsive structure */
+        @media (max-width: 767.98px) {
+            html, body { height: auto; overflow: visible; }
+            main.d-flex { flex-direction: column; height: auto; }
+            .sidebar { width: 100% !important; height: auto; min-height: auto !important; border-right: none; border-bottom: 1px solid var(--border-color); }
+            .main-content { height: auto; overflow: visible; }
+            .top-bar { position: sticky; top: 0; }
+            .b-example-vr { display: none; } /* Hide divider on mobile */
+        }
+
+        /* --- Top Bar Styling (Common) --- */
         .top-bar {
             height: 45px;
             min-height: 45px;
@@ -81,16 +109,9 @@
             font-weight: 500;
         }
 
-        code, pre {
-            font-family: 'JetBrains Mono', monospace !important;
-            background-color: rgba(0,0,0,0.05);
-            padding: 2px 4px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-
         .dropdown-item:hover { background-color: var(--book-brown) !important; color: #fff !important; }
     </style>
+
 </head>
 <body>
 
@@ -141,6 +162,10 @@
 
     <div class="flex-grow-1 main-content">
         <header class="top-bar">
+            <button class="btn d-md-none me-2 p-0 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                <i class="bi bi-list fs-3 text-custom-brown"></i>
+            </button>
+
             <div class="breadcrumb-text">
                 Ryan Su / <b>{{ page.title }}</b>
             </div>
