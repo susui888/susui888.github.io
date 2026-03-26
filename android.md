@@ -28,7 +28,7 @@ permalink: /android/
 
         <div class="d-flex gap-2">
             <a href="https://github.com/susui888/CoolLib_Android" target="_blank" class="btn btn-sm btn-outline-dark rounded-pill px-3">
-                <i class="bi bi-github me-1"></i> View Repository
+                <i class="bi bi-github me-1"></i> Source Code
             </a>
             <a href="#core-features" class="btn btn-sm btn-outline-brown rounded-pill px-3" style="border-color: #8B4513; color: #8B4513;">
                 <i class="bi bi-palette me-1"></i> Design System
