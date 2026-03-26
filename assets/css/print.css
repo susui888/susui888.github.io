@@ -23,10 +23,17 @@
     }
 
     .row { display: block !important; margin: 0 !important; }
-    .col-md-7, .col-lg-8, .col-lg-4 {
+
+    /* 核心修复：彻底禁用外层容器的任何边框 */
+    .col-md-7, .col-lg-8, .col-lg-4, .col-md-5.order-md-2,
+    div[style*="border-left"], .border-start {
         width: 100% !important;
         max-width: 100% !important;
         padding: 0 !important;
+        display: block !important;
+        border: none !important;
+        border-left: 0 !important;
+        border-left-width: 0 !important;
     }
 
     /* 3. 姓名与标题 */
@@ -39,15 +46,27 @@
 
     /* 4. 隐藏不必要元素 */
     nav, .navbar, .skills-sidebar, .download-btn, .top-bar,
-    .b-example-divider, .col-lg-4:not(.d-print-block),
-    .col-md-5.order-md-2, img, .d-print-none {
+    .b-example-divider, img, .d-print-none {
         display: none !important;
     }
 
-    /* 5. 章节标题：统一棕色与下划线 */
-    section h3,
-    .d-print-block h3,
-    h3.text-custom-brown {
+    /* 5. 个人简介样式：这是唯一保留边框的地方 */
+    .col-md-5.order-md-2 p.small {
+        display: block !important;
+        max-width: 100% !important;
+        text-align: left !important;
+        margin: 10px 0 20px 0 !important;
+        font-size: 10pt !important;
+        line-height: 1.5 !important;
+        color: #2c2c2c !important;
+        font-style: italic !important;
+        border-left: 3px solid #eee5d8 !important; /* 装饰线 */
+        padding-left: 15px !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+
+    /* 6. 章节标题 */
+    section h3, .d-print-block h3, h3.text-custom-brown {
         color: #8B4513 !important;
         border-bottom: 1.5px solid #eee5d8 !important;
         margin-top: 1.2rem !important;
@@ -55,64 +74,28 @@
         font-size: 13pt !important;
         text-transform: uppercase !important;
         font-weight: bold !important;
-        font-family: 'Georgia', serif !important;
         -webkit-print-color-adjust: exact !important;
     }
 
-    section h3 i, .d-print-block h3 i {
-        color: #8B4513 !important;
-        -webkit-print-color-adjust: exact !important;
-    }
-
-    /* 6. 核心修改：将所有 Card 样式转化为简洁的条目 */
+    /* 7. 条目样式 (Card 转换) */
     .card, .project-card {
         background-color: transparent !important;
-        border: none !important; /* 移除所有外框 */
-        box-shadow: none !important; /* 移除阴影 */
-        margin-bottom: 0.8rem !important; /* 缩减条目间距 */
-        padding: 0 !important;
-        border-left: 2px solid #8B4513 !important; /* 仅保留左侧细线 */
-        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        margin-bottom: 0.8rem !important;
+        border-left: 2px solid #8B4513 !important;
         margin-left: 2px !important;
+        padding: 0 !important;
         break-inside: avoid;
     }
 
-    /* 移除 Card Body 的默认内边距，让文字紧贴左线 */
-    .card-body {
-        padding: 0 0 0 12px !important; /* 仅保留左侧 12px 缩进 */
-    }
+    .card-body { padding: 0 0 0 12px !important; }
 
-    /* 调整卡片内的标题 */
-    .card-title, h5 {
-        font-size: 11pt !important;
-        margin-bottom: 2px !important;
-        color: #000 !important;
-    }
-
-    /* 7. 列表与文字微调 */
+    /* 8. 细节优化 */
     .custom-list { padding-left: 0 !important; margin-left: 8px !important; }
-    .custom-list li { margin-bottom: 2px !important; }
-
     .text-secondary { color: #444 !important; }
     .fw-bold { color: #000 !important; }
-
-    /* 8. 分页与徽章 */
-    .page-break-print {
-        break-before: page !important;
-        page-break-before: always !important;
-        margin-top: 0 !important;
-    }
-
-    .badge {
-        background-color: transparent !important;
-        color: #8B4513 !important;
-        border: 1px solid #eee5d8 !important;
-        font-size: 9pt !important;
-        padding: 2px 6px !important;
-        font-weight: normal !important;
-    }
-
-    /* 覆盖右对齐 */
+    .page-break-print { break-before: page !important; margin-top: 0 !important; }
     .text-md-end { text-align: left !important; }
     .justify-content-md-end { justify-content: flex-start !important; }
 }
