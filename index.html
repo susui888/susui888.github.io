@@ -96,16 +96,34 @@ permalink: /
         </p>
 
         <div class="d-flex flex-wrap justify-content-md-end gap-3">
-            <a href="#" target="_blank" class="contact-icon-btn" title="London SW7 2BB">
-                <i class="bi bi-geo-alt-fill"></i>
-            </a>
-            <a href="mailto:yirong.su25@imperial.ac.uk" class="contact-icon-btn" title="Email">
-                <i class="bi bi-envelope-fill"></i>
-            </a>
-            <a href="https://github.com/Ryan-yirongsu" target="_blank" class="contact-icon-btn" title="GitHub">
-                <i class="bi bi-github"></i>
-            </a>
+            <div class="d-print-none d-flex gap-3">
+                <a href="https://www.google.com/maps/search/?api=1&query=Imperial+College+London+South+Kensington" target="_blank" class="contact-icon-btn" title="London SW7 2BB">
+                    <i class="bi bi-geo-alt-fill"></i>
+                </a>
+                <a href="mailto:yirong.su25@imperial.ac.uk" class="contact-icon-btn" title="Email">
+                    <i class="bi bi-envelope-fill"></i>
+                </a>
+                <a href="https://github.com/Ryan-yirongsu" target="_blank" class="contact-icon-btn" title="GitHub">
+                    <i class="bi bi-github"></i>
+                </a>
+            </div>
+
+            <div class="d-none d-print-block text-md-end">
+                <div class="mb-1">
+                    <i class="bi bi-envelope-fill me-2 text-custom-brown"></i>
+                    <span>yirong.su25@imperial.ac.uk</span>
+                </div>
+                <div class="mb-1">
+                    <i class="bi bi-github me-2 text-custom-brown"></i>
+                    <span>github.com/Ryan-yirongsu</span>
+                </div>
+                <div>
+                    <i class="bi bi-geo-alt-fill me-2 text-custom-brown"></i>
+                    <span>London SW7 2BB</span>
+                </div>
+            </div>
         </div>
+
     </div>
 
     <div class="col-md-5 col-lg-4 text-md-end mt-4 mt-md-0 order-md-2">
@@ -116,6 +134,13 @@ permalink: /
             </p>
         </div>
     </div>
+</div>
+
+<div class="d-none d-print-block mt-4 mb-2">
+    <p class="fst-italic text-dark lh-base" style="font-size: 11pt; border-left: 3px solid #eee5d8; padding-left: 15px;">
+        Joint Mathematics and Computer Science student at Imperial College London with a strong background in mathematics,
+        algorithms, and data modelling. Keen to apply quantitative and programming skills to real-world problems.
+    </p>
 </div>
 
 <div class="row">
@@ -235,6 +260,10 @@ permalink: /
                 </div>
             </div>
         </section>
+
+        {% include print-skills.html %}
+
+
     </div>
 
     <div class="col-lg-4">
@@ -273,16 +302,15 @@ permalink: /
                 </div>
             </div>
 
-            <div class="mt-5 pt-2">
-                <h4 class="h5 fw-bold mb-3 border-bottom pb-2 text-custom-brown">
-                    <i class="bi bi-person-heart me-2"></i>Personal Interests
-                </h4>
+            <div class="mt-5 pt-2 d-print-none"> <h4 class="h5 fw-bold mb-3 border-bottom pb-2 text-custom-brown">
+                <i class="bi bi-person-heart me-2"></i>Personal Interests
+            </h4>
 
                 <div class="small ps-1">
                     <div class="mb-3 d-flex align-items-start gap-2">
                         <i class="bi bi-microsoft-teams text-custom-brown mt-1"></i>
                         <div>
-                            <span class="fw-bold d-block">Societies</span>
+                            <span class="fw-bold d-block text-dark">Societies</span>
                             <span class="text-muted">Imperial Computing Society & Poker Club</span>
                         </div>
                     </div>
@@ -290,7 +318,7 @@ permalink: /
                     <div class="mb-0 d-flex align-items-start gap-2">
                         <i class="bi bi-suit-spade-fill text-custom-brown mt-1"></i>
                         <div>
-                            <span class="fw-bold d-block">Experience</span>
+                            <span class="fw-bold d-block text-dark">Experience</span>
                             <span class="text-muted">10+ years Texas Hold’em expertise.</span>
                         </div>
                     </div>
