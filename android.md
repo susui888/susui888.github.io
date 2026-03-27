@@ -6,12 +6,18 @@ permalink: /android/
 
 <div class="card border-0 shadow-sm mb-5" style="background-color: #fdfdfb; border: 1px solid #eee5d8 !important;">
     <div class="card-body p-4">
-        <div class="d-flex align-items-center mb-3">
-            <div class="bg-custom-brown-light p-2 rounded-3 me-3" style="background-color: rgba(139, 69, 19, 0.1);">
+        <div class="d-flex align-items-start mb-3"> <div class="bg-custom-brown-light p-2 rounded-3 me-3" style="background-color: rgba(139, 69, 19, 0.1);">
                 <i class="bi bi-android2 fs-3" style="color: #8B4513;"></i>
             </div>
-            <div>
-                <h3 class="mb-0 text-custom-brown" style="font-family: 'Geist Sans', sans-serif;">CoolLib — Native Android Client</h3>
+            <div class="flex-grow-1">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h3 class="mb-0 text-custom-brown" style="font-family: 'Geist Sans', sans-serif;">CoolLib — Native Android Client</h3>
+
+                    <a href="https://github.com/susui888/CoolLib_Android/actions/workflows/android-ci.yml" class="d-print-none">
+                        <img src="https://github.com/susui888/CoolLib_Android/actions/workflows/android-ci.yml/badge.svg" alt="Android CI/CD">
+                    </a>
+                </div>
+
                 <div class="mt-1 d-flex flex-wrap gap-1">
                     <span class="badge rounded-pill" style="background-color: #3DDC84; color: #000;">Jetpack Compose</span>
                     <span class="badge rounded-pill" style="background-color: #8B4513;">Kotlin</span>
