@@ -6,23 +6,37 @@ permalink: /android/
 
 <div class="card border-0 shadow-sm mb-5" style="background-color: #fdfdfb; border: 1px solid #eee5d8 !important;">
     <div class="card-body p-4">
-        <div class="d-flex align-items-start mb-3"> <div class="bg-custom-brown-light p-2 rounded-3 me-3" style="background-color: rgba(139, 69, 19, 0.1);">
+        <div class="d-flex align-items-start mb-3"> 
+            <div class="bg-custom-brown-light p-2 rounded-3 me-3" style="background-color: rgba(139, 69, 19, 0.1);">
                 <i class="bi bi-android2 fs-3" style="color: #8B4513;"></i>
             </div>
+
             <div class="flex-grow-1">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h3 class="mb-0 text-custom-brown" style="font-family: 'Geist Sans', sans-serif;">CoolLib — Native Android Client</h3>
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="me-3">
+                        <h3 class="mb-0 text-custom-brown" style="font-family: 'Geist Sans', sans-serif; line-height: 1.2;">
+                            CoolLib — Native Android Client
+                        </h3>
+                        <div class="mt-2 d-flex flex-wrap gap-1">
+                            <span class="badge rounded-pill" style="background-color: #3DDC84; color: #000;">Jetpack Compose</span>
+                            <span class="badge rounded-pill" style="background-color: #8B4513;">Kotlin</span>
+                            <span class="badge rounded-pill" style="background-color: #6c757d;">MVVM</span>
+                            <span class="badge rounded-pill bg-dark">Hilt DI</span>
+                        </div>
+                    </div>
 
-                    <a href="https://github.com/susui888/CoolLib_Android/actions/workflows/android-ci.yml" class="d-print-none">
-                        <img src="https://github.com/susui888/CoolLib_Android/actions/workflows/android-ci.yml/badge.svg" alt="Android CI/CD">
-                    </a>
-                </div>
-
-                <div class="mt-1 d-flex flex-wrap gap-1">
-                    <span class="badge rounded-pill" style="background-color: #3DDC84; color: #000;">Jetpack Compose</span>
-                    <span class="badge rounded-pill" style="background-color: #8B4513;">Kotlin</span>
-                    <span class="badge rounded-pill" style="background-color: #6c757d;">MVVM</span>
-                    <span class="badge rounded-pill bg-dark">Hilt DI</span>
+                    <div class="d-flex flex-column align-items-end flex-shrink-0" style="min-width: 140px;">
+                        <a href="https://github.com/susui888/CoolLib_Android/actions/workflows/android-ci.yml" class="d-print-none mb-2">
+                            <img src="https://github.com/susui888/CoolLib_Android/actions/workflows/android-ci.yml/badge.svg" alt="Android CI/CD">
+                        </a>
+                
+                        <div class="d-flex align-items-center opacity-75">
+                            <div id="status-dot" class="rounded-circle me-2" style="width: 8px; height: 8px; background-color: #ccc; transition: background-color 0.5s;"></div>
+                            <span id="ci-status-text" class="small text-secondary" style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; white-space: nowrap;">
+                                Checking status...
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -45,22 +59,31 @@ permalink: /android/
 
 ## <i class="bi bi-layers-half me-2"></i> Architectural Philosophy
 
-**CoolLib Android** is engineered using **Modern Android Development (MAD)** practices. By implementing a reactive data pipeline and strict layer separation, the app ensures a fluid user experience even under complex data states and varying network conditions.
+**CoolLib Android** is engineered using **Modern Android Development (MAD)** practices. By implementing a reactive data
+pipeline and strict layer separation, the app ensures a fluid user experience even under complex data states and varying
+network conditions.
 
 ## <i class="bi bi-cpu-fill me-2"></i> Key Technical Wins
 
-* **Clean Architecture**: Implemented strict **MVVM** with isolated Data, Domain, and UI layers using **Kotlin-First** principles for maximum maintainability.
-* **Performance Tuning**: Reduced data load times by **60%** via **Coroutines (`async/awaitAll`)** for concurrent repository-level data mapping and transformation.
-* **Dependency Injection**: Engineered a robust DI graph with **Hilt**, utilizing custom **Qualifiers** (`@IoDispatcher`) for granular threading control.
-* **Reactive Pipeline**: Built a real-time data flow using **StateFlow/SharedFlow** integrated with **Room** for a reliable "Offline-First" experience.
-* **Quality Assurance**: Maintained system stability with **MockK** unit tests and **Compose Rule** UI tests covering core business logic.
+* **Clean Architecture**: Implemented strict **MVVM** with isolated Data, Domain, and UI layers using **Kotlin-First**
+  principles for maximum maintainability.
+* **Performance Tuning**: Reduced data load times by **60%** via **Coroutines (`async/awaitAll`)** for concurrent
+  repository-level data mapping and transformation.
+* **Dependency Injection**: Engineered a robust DI graph with **Hilt**, utilizing custom **Qualifiers** (
+  `@IoDispatcher`) for granular threading control.
+* **Reactive Pipeline**: Built a real-time data flow using **StateFlow/SharedFlow** integrated with **Room** for a
+  reliable "Offline-First" experience.
+* **Quality Assurance**: Maintained system stability with **MockK** unit tests and **Compose Rule** UI tests covering
+  core business logic.
 
 ---
 
 ### <i class="bi bi-diagram-3-fill me-2"></i> Data Flow Architecture
+
 {% include graph-android-dataflow.html %}
 
 ### <i class="bi bi-check-all me-2"></i> Single Source of Truth (SSOT)
+
 {% include graph-android-ssot.html %}
 
 ---
