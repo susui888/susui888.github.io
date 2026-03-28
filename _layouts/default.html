@@ -55,7 +55,7 @@
 
         code, pre {
             font-family: 'JetBrains Mono', monospace !important;
-            background-color: rgba(0,0,0,0.05);
+            background-color: rgba(0, 0, 0, 0.05);
             padding: 2px 4px;
             border-radius: 4px;
             font-size: 0.9em;
@@ -70,7 +70,7 @@
         .sidebar .nav-pills .nav-link.active {
             background-color: var(--book-brown) !important;
             color: white !important;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .sidebar .nav-pills .nav-link:hover:not(.active) {
@@ -84,20 +84,65 @@
 
         /* Desktop View: Keep your original height-constrained layout */
         @media (min-width: 768px) {
-            html, body { height: 100%; overflow: hidden; }
-            main.d-flex { height: 100vh; overflow: hidden; }
-            .sidebar { height: 100vh; overflow-y: auto; width: 280px; }
-            .main-content { height: 100vh; overflow-y: auto; display: flex; flex-direction: column; }
+            html, body {
+                height: 100%;
+                overflow: hidden;
+            }
+
+            main.d-flex {
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            .sidebar {
+                height: 100vh;
+                overflow-y: auto;
+                width: 280px;
+            }
+
+            .main-content {
+                height: 100vh;
+                overflow-y: auto;
+                display: flex;
+                flex-direction: column;
+            }
         }
 
         /* Mobile View: Allow natural scrolling and responsive structure */
         @media (max-width: 767.98px) {
-            html, body { height: auto; overflow: visible; }
-            main.d-flex { flex-direction: column; height: auto; }
-            .sidebar { width: 100% !important; height: auto; min-height: auto !important; border-right: none; border-bottom: 1px solid var(--border-color); }
-            .main-content { height: auto; overflow: visible; }
-            .top-bar { position: sticky; top: 0; }
-            .b-example-vr { display: none; } /* Hide divider on mobile */
+            html, body {
+                height: auto;
+                overflow: visible;
+            }
+
+            main.d-flex {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .sidebar {
+                width: 100% !important;
+                height: auto;
+                min-height: auto !important;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .main-content {
+                height: auto;
+                overflow: visible;
+            }
+
+            .top-bar {
+                position: sticky;
+                top: 0;
+            }
+
+            .b-example-vr {
+                display: none;
+            }
+
+            /* Hide divider on mobile */
         }
 
         /* --- Top Bar Styling (Common) --- */
@@ -123,7 +168,10 @@
             font-weight: 500;
         }
 
-        .dropdown-item:hover { background-color: var(--book-brown) !important; color: #fff !important; }
+        .dropdown-item:hover {
+            background-color: var(--book-brown) !important;
+            color: #fff !important;
+        }
     </style>
 
 </head>
@@ -153,7 +201,7 @@
             const id = 'mermaid-svg-' + Math.random().toString(36).substr(2, 9);
             const content = mermaidDiv.textContent.trim();
 
-            mermaid.render(id, content).then(({ svg }) => {
+            mermaid.render(id, content).then(({svg}) => {
                 mermaidDiv.innerHTML = svg;
                 const svgElement = mermaidDiv.querySelector('svg');
                 if (svgElement) {
@@ -176,7 +224,8 @@
 
     <div class="flex-grow-1 main-content">
         <header class="top-bar">
-            <button class="btn d-md-none me-2 p-0 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+            <button class="btn d-md-none me-2 p-0 border-0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#sidebarMenu">
                 <i class="bi bi-list fs-3 text-custom-brown"></i>
             </button>
 
@@ -221,7 +270,7 @@
 
                 // 2. 格式化状态
                 const status = lastRun.conclusion; // success, failure, cancelled
-                const timeAgo = new Intl.RelativeTimeFormat('en', { numeric: 'auto' }).format(
+                const timeAgo = new Intl.RelativeTimeFormat('en', {numeric: 'auto'}).format(
                     Math.ceil((endTime - new Date()) / 3600000 / 24), 'day'
                 );
 

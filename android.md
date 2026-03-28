@@ -24,19 +24,6 @@ permalink: /android/
                             <span class="badge rounded-pill bg-dark">Hilt DI</span>
                         </div>
                     </div>
-
-                    <div class="d-flex flex-column align-items-end flex-shrink-0" style="min-width: 140px;">
-                        <a href="https://github.com/susui888/CoolLib_Android/actions/workflows/android-ci.yml" class="d-print-none mb-2">
-                            <img src="https://github.com/susui888/CoolLib_Android/actions/workflows/android-ci.yml/badge.svg" alt="Android CI/CD">
-                        </a>
-                
-                        <div class="d-flex align-items-center opacity-75">
-                            <div id="status-dot" class="rounded-circle me-2" style="width: 8px; height: 8px; background-color: #ccc; transition: background-color 0.5s;"></div>
-                            <span id="ci-status-text" class="small text-secondary" style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; white-space: nowrap;">
-                                Checking status...
-                            </span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -46,13 +33,26 @@ permalink: /android/
             Built with <b>Clean Architecture</b>, it provides an offline-first experience with real-time synchronization to the Spring backend.
         </p>
 
-        <div class="d-flex gap-2">
-            <a href="https://github.com/susui888/CoolLib_Android" target="_blank" class="btn btn-sm btn-outline-dark rounded-pill px-3">
+        <div class="d-flex align-items-center gap-3 mt-3">
+            <a href="https://github.com/susui888/CoolLib_Android" target="_blank" 
+               class="btn btn-sm btn-outline-dark rounded-pill px-3 fw-medium" 
+               style="font-size: 0.8rem; border-color: #8B4513; color: #8B4513;">
                 <i class="bi bi-github me-1"></i> Source Code
             </a>
-            <a href="#core-features" class="btn btn-sm btn-outline-brown rounded-pill px-3" style="border-color: #8B4513; color: #8B4513;">
-                <i class="bi bi-palette me-1"></i> Design System
-            </a>
+        
+            <div class="ms-auto d-flex align-items-center gap-4">
+                <a href="https://github.com/susui888/CoolLib_Android/actions/workflows/android-ci.yml" class="d-print-none opacity-75 hover-opacity-100 transition-all">
+                    <img src="https://github.com/susui888/CoolLib_Android/actions/workflows/android-ci.yml/badge.svg?style=flat-square&color=6e7781" 
+                         alt="Android CI/CD" style="height: 18px; vertical-align: middle;">
+                </a>
+        
+                <div class="d-flex align-items-center ps-3 border-start border-light-subtle flex-shrink-0" style="border-width: 2px !important;">
+                    <div id="status-dot" class="rounded-circle me-2" style="width: 7px; height: 7px; background-color: #ccc; box-shadow: 0 0 4px rgba(0,0,0,0.1);"></div>
+                    <span id="ci-status-text" class="text-secondary" style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: -0.02em; text-transform: uppercase;">
+                        Checking...
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
