@@ -172,6 +172,19 @@
             background-color: var(--book-brown) !important;
             color: #fff !important;
         }
+
+        .project-link {
+            color: #212529; /* 初始颜色为深色，与正文统一 */
+            text-decoration: none;
+            transition: all 0.25s ease-in-out;
+            border-bottom: 1px solid transparent; /* 预留底部边框，防止抖动 */
+        }
+
+        .project-link:hover {
+            color: #8B4513; /* 悬停时变为你的书卷棕 */
+            /* 添加一个极细的下划线增加暗示感，或者不加保持极简 */
+            border-bottom: 1px solid rgba(139, 69, 19, 0.3);
+        }
     </style>
 
 </head>
