@@ -116,4 +116,44 @@
         margin-top: 5rem !important;
         page-break-before: auto; /* 允许在此处分页，但不强制 */
     }
+
+    /* 1. 设置 A4 纸张的基础边距 */
+    @page {
+        margin: 1.0cm; /* 根据你的简历内容调整 */
+    }
+
+    /* 2. 定位二维码容器 */
+    #print-qrcode {
+        position: absolute; /* 相对于页面边缘定位 */
+        top: 0;             /* 距离纸张顶部边缘 */
+        right: 0;           /* 距离纸张右侧边缘 */
+        text-align: center;
+        width: 100px;        /* 二维码宽度，约 2cm，不占空间 */
+        z-index: 9999;      /* 确保在最上层 */
+    }
+
+    /* 3. 图片样式 */
+    #print-qrcode img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* 4. 文字说明样式 */
+    #print-qrcode p {
+        font-family: 'JetBrains Mono', monospace; /* 呼应你的技术背景 */
+        font-size: 7pt;       /* 打印建议使用 pt 单位 */
+        color: #8B4513;       /* 统一你的书卷棕色调 */
+        line-height: 1.1;
+        margin-top: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+    }
+
+    #print-qrcode,
+    #print-qrcode img {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
 }
