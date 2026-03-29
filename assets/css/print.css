@@ -124,12 +124,16 @@
 
     /* 2. 定位二维码容器 */
     #print-qrcode {
-        position: absolute; /* 相对于页面边缘定位 */
-        top: 0;             /* 距离纸张顶部边缘 */
-        right: 0;           /* 距离纸张右侧边缘 */
+        position: absolute;
+        top: 0.5in;          /* 距离纸张顶部 */
+        right: 0.15in;       /* 与你 container 的 padding 对齐 */
+        width: 80px;         /* 宽度约 2.1cm */
         text-align: center;
-        width: 100px;        /* 二维码宽度，约 2cm，不占空间 */
-        z-index: 9999;      /* 确保在最上层 */
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none !important; /* 核心：移除 PDF 中的下划线 */
+        z-index: 9999;
     }
 
     /* 3. 图片样式 */
