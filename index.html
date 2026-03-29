@@ -227,11 +227,11 @@ permalink: /
                             <ul class="custom-list small text-secondary mb-0" style="line-height: 1.6;">
                                 <li>
                                     <i class="bi bi-chevron-right"></i>
-                                    <span><span class="fw-bold text-dark">Standardized Tests:</span> TMUA (9/9) | A Level Further Mathematics (A*) | AP Calculus BC/CS A/Statistics/Physics 1,2,C (All 5s)</span>
+                                    <span><span class="fw-bold text-dark">Standardized Tests:</span> A Level Further Mathematics (A*) | AP Calculus BC/CS A/Economics/Statistics/Physics 1,2,C (All 5s)</span>
                                 </li>
                                 <li>
                                     <i class="bi bi-chevron-right"></i>
-                                    <span><span class="fw-bold text-dark">Competitions & Others:</span> AMC (Top 1%) | AP Economics (GPA 4.0)</span>
+                                    <span><span class="fw-bold text-dark">Competitions & Others:</span> AMC (Top 1%) | TMUA (9/9) </span>
                                 </li>
                             </ul>
                         </div>
@@ -243,49 +243,93 @@ permalink: /
         <div class="page-break-print"></div>
 
         <section id="projects" class="mb-5">
+
             <h3 class="h4 pb-2 mb-4 text-uppercase fw-bold text-custom-brown">
                 <i class="bi bi-code-slash me-2"></i>Projects
             </h3>
-            <div class="card border-0 shadow-sm mb-4 project-card">
-                <div class="card-body">
-                    <h5 class="fw-bold card-title text-dark">Library System Development</h5>
-                    <ul class="custom-list small text-secondary" style="line-height: 1.6;">
+
+            <div class="card border-0 shadow-sm mb-4 project-card" style="background-color: #fdfdfb; border: 1px solid #eee5d8 !important;">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-server fs-4 me-3" style="color: #8B4513;"></i>
+                        <h5 class="fw-bold card-title text-dark mb-0">CoolLib — Scalable Backend Infrastructure</h5>
+                    </div>
+                    <ul class="custom-list small text-secondary" style="line-height: 1.7;">
                         <li>
-                            <i class="bi bi-chevron-right"></i><span>Built backend with <strong>Spring Boot/Security</strong> using Clean Architecture (DTO/Domain/Entity).</span>
+                            <i class="bi bi-chevron-right"></i><span>Architected a <strong>stateless REST API</strong> serving as the unified data source for <strong>Native Android & iOS clients</strong>.</span>
                         </li>
-                        <li><i class="bi bi-chevron-right"></i><span>Implemented role-based authorization and one-way hashing for secure authentication.</span>
+                        <li>
+                            <i class="bi bi-chevron-right"></i><span>Hardened security via <strong>JWT & RBAC</strong>, ensuring secure cross-platform session management.</span>
                         </li>
-                        <li><i class="bi bi-chevron-right"></i><span>Optimized <strong>PostgreSQL</strong> concurrency; used <strong>Kotlin coroutines</strong> for scalability.</span>
-                        </li>
-                        <li><i class="bi bi-chevron-right"></i><span>Improved search efficiency by <strong>25%</strong> via RegEx-based fuzzy search optimization.</span>
-                        </li>
-                        <li><i class="bi bi-chevron-right"></i><span>Comprehensive unit & integration testing (JUnit, Mockito).</span>
+                        <li>
+                            <i class="bi bi-chevron-right"></i><span>Optimized <strong>PostgreSQL</strong> concurrency to handle simultaneous transactions from multiple mobile endpoints.</span>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="card border-0 shadow-sm mb-4 project-card">
-                <div class="card-body">
-                    <h5 class="fw-bold card-title text-dark">EPQ – Consumer Behaviour & Emotions</h5>
-                    <div class="card-text">
-                        <div class="small text-secondary mb-2" style="line-height: 1.6;">
-                            <i class="bi bi-star-fill text-custom-brown me-2"></i><strong>Grade A*</strong>
-                        </div>
-                        <ul class="custom-list small text-secondary" style="line-height: 1.6;">
-                            <li>
-                                <i class="bi bi-chevron-right"></i>
-                                <span><strong>Modeling:</strong> Applied Hidden Markov Models (HMMs), Principal Component Analysis (PCA) and regression.</span>
-                            </li>
-                            <li>
-                                <i class="bi bi-chevron-right"></i>
-                                <span><strong>Optimization:</strong> Tuned transition and emission matrices for predictive modelling.</span>
-                            </li>
-                        </ul>
+            <div class="card border-0 shadow-sm mb-4 project-card" style="background-color: #fdfdfb; border: 1px solid #eee5d8 !important;">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-android2 fs-4 me-3" style="color: #8B4513;"></i>
+                        <h5 class="fw-bold card-title text-dark mb-0">CoolLib — Reactive Android Client</h5>
                     </div>
+                    <ul class="custom-list small text-secondary" style="line-height: 1.7;">
+                        <li>
+                            <i class="bi bi-chevron-right"></i><span>Engineered a <strong>Jetpack Compose</strong> interface with seamless <strong>Spring Boot integration</strong> via Retrofit.</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i><span>Implemented <strong>Offline-first sync</strong> using Room DB, ensuring data persistence when disconnected from the server.</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i><span>Utilized <strong>Hilt (DI)</strong> to manage network dependencies and lifecycle-aware state propagation.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm mb-4 project-card" style="background-color: #fdfdfb; border: 1px solid #eee5d8 !important;">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-apple fs-4 me-3" style="color: #8B4513;"></i>
+                        <h5 class="fw-bold card-title text-dark mb-0">CoolLib — Native iOS Client</h5>
+                    </div>
+                    <ul class="custom-list small text-secondary" style="line-height: 1.7;">
+                        <li>
+                            <i class="bi bi-chevron-right"></i><span>Constructed a <strong>SwiftUI</strong> client achieving full <strong>feature parity</strong> with the Android ecosystem.</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i><span>Integrated <strong>SwiftData</strong> and Async/Await for high-performance reactive updates from the <strong>Spring backend</strong>.</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i><span>Leveraged <strong>Combine</strong> for efficient resource fetching and synchronized data modeling.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm mb-4 project-card" style="background-color: #fdfdfb; border: 1px solid #eee5d8 !important;">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-graph-up-arrow fs-4 me-3" style="color: #8B4513;"></i>
+                            <h5 class="fw-bold card-title text-dark mb-0">Consumer Behaviour & Emotions (EPQ)</h5>
+                        </div>
+                        <span class="badge rounded-pill px-3" style="background-color: rgba(139, 69, 19, 0.1); color: #8B4513; border: 1px solid #eee5d8;">Grade A*</span>
+                    </div>
+                    <ul class="custom-list small text-secondary" style="line-height: 1.7;">
+                        <li>
+                            <i class="bi bi-chevron-right"></i><span><strong>Stochastic Modeling:</strong> Applied <strong>HMMs</strong> and <strong>PCA</strong> for pattern extraction in complex datasets.</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i><span><strong>Optimization:</strong> Refined transition matrices to enhance predictive accuracy in behavioral modeling.</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
+
+        <div class="page-break-print"></div>
 
         <section class="mb-5">
             <h3 class="h4 pb-2 mb-4 text-uppercase fw-bold text-custom-brown">

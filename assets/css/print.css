@@ -111,4 +111,9 @@
         page-break-before: always !important; /* 兼容旧版浏览器 */
         break-before: page !important;        /* 现代标准 */
     }
+
+    section.mb-5 {
+        margin-top: 5rem !important;
+        page-break-before: auto; /* 允许在此处分页，但不强制 */
+    }
 }
