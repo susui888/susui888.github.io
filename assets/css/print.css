@@ -176,4 +176,15 @@
         pointer-events: auto !important;
         color: #2c2c2c !important;
     }
+
+    .site-footer-print {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        font-size: 6pt;
+        color: #a69685;
+        font-family: 'JetBrains Mono', monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
 }
