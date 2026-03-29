@@ -1,33 +1,36 @@
-/* assets/css/print.css */
+/* assets/css/print.css - Final 2-Page Compact Layout with Stable QR Code */
 
 @media print {
-    /* 1. 基础设定：增大字号与行高 */
+    /* 1. 基础布局：回归 2 页黄金比例 */
     html, body {
         margin: 0 !important;
-        padding-top: 0.4in !important;   /* 增加顶部边距 */
-        padding-bottom: 0.4in !important;/* 增加底部边距 */
+        padding-top: 0.25in !important; /* 顶部留白 */
+        padding-bottom: 0.25in !important;
         background-color: white !important;
         color: #1a1a1a !important;
-        /* 关键修改：从 10.5pt 提升到 11.5pt，让文字更易读且占据更多空间 */
-        font-size: 11.5pt !important;
+        font-size: 10.2pt !important; /* 微调字号以适配 2 页 */
         font-family: 'Georgia', 'Times New Roman', serif !important;
-        line-height: 1.3 !important;    /* 增加行间距 (从 1.4 到 1.6) */
+        line-height: 1.32 !important; /* 紧凑行高 */
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
+        position: relative !important; /* 为二维码提供定位基准 */
     }
 
-    /* 2. 布局：增加页边距 */
+    /* 2. 容器优化：增加横向宽度 */
     .container, .container-fluid {
         max-width: 100% !important;
         width: 100% !important;
-        padding-left: 0.65in !important; /* 增加左右页边距 */
-        padding-right: 0.65in !important;
+        padding-left: 0.5in !important;
+        padding-right: 0.5in !important;
         margin: 0 !important;
     }
 
-    .row { display: block !important; margin: 0 !important; }
+    .row {
+        display: block !important;
+        margin: 0 !important;
+    }
 
-    /* 彻底移除侧边栏/多余容器的干扰 */
+    /* 强制单栏以最大化利用空间 */
     .col-md-7, .col-lg-8, .col-lg-4, .col-md-5.order-md-2,
     div[style*="border-left"], .border-start {
         width: 100% !important;
@@ -37,154 +40,153 @@
         border: none !important;
     }
 
-    /* 3. 姓名：更显眼 */
+    /* 3. 姓名：精致且避开二维码 */
     h1.display-4 {
-        margin-bottom: 2.0rem !important;
-        font-size: 32pt !important; /* 增大姓名号数 */
+        margin-top: 0 !important;
+        margin-bottom: 0.8rem !important;
+        font-size: 24pt !important;
         color: #8B4513 !important;
         font-weight: bold !important;
+        padding-right: 90px !important; /* 关键：为右侧二维码留出空间 */
     }
 
-    /* 4. 隐藏不需要的元素 */
+    /* 4. 隐藏不必要的 Web 元素 */
     nav, .navbar, .skills-sidebar, .download-btn, .top-bar,
-    .b-example-divider, img, .d-print-none, .tooltip {
+    .b-example-divider, img:not(#print-qrcode img), .d-print-none, .tooltip {
         display: none !important;
     }
 
-    /* 5. 个人简介：保持优雅的引用样式 */
+    /* 5. 个人简介：书卷气引用样式 */
     .col-md-5.order-md-2 p.small {
         display: block !important;
-        max-width: 100% !important;
-        text-align: left !important;
-        margin: 15px 0 25px 0 !important;
-        font-size: 11pt !important;
-        line-height: 1.6 !important;
-        color: #333 !important;
+        max-width: 90% !important;
+        margin: 8px 0 12px 0 !important;
+        font-size: 9.5pt !important;
+        line-height: 1.4 !important;
+        color: #444 !important;
         font-style: italic !important;
-        border-left: 4px solid #eee5d8 !important; /* 加粗装饰线 */
-        padding-left: 20px !important;
+        border-left: 3px solid #eee5d8 !important;
+        padding-left: 15px !important;
     }
 
-    /* 6. 章节标题：增加间距，强制拉开内容 */
+    /* 6. 章节标题：脱水压缩 */
     section h3, .d-print-block h3, h3.text-custom-brown {
         color: #8B4513 !important;
-        border-bottom: 2px solid #eee5d8 !important;
-        margin-top: 2rem !important;    /* 显著增加章节上方的空隙 (从 1.2rem 到 2rem) */
-        margin-bottom: 1.2rem !important;
-        padding-bottom: 6px !important;
-        font-size: 15pt !important;     /* 增大标题号数 */
+        border-bottom: 1.5pt solid #eee5d8 !important;
+        margin-top: 1.0rem !important;
+        margin-bottom: 0.6rem !important;
+        padding-bottom: 3px !important;
+        font-size: 13pt !important;
         text-transform: uppercase !important;
         font-weight: bold !important;
     }
 
-    /* 7. 经历/项目条目 (Card) */
+    /* 7. 项目/经历条目：极致间距优化 */
     .card, .project-card {
         background-color: transparent !important;
         border: none !important;
         box-shadow: none !important;
-        margin-bottom: 1.5rem !important; /* 增加每个项目之间的间距 (从 0.8rem 到 1.5rem) */
-        border-left: 3px solid #8B4513 !important;
+        margin-bottom: 0.6rem !important;
+        border-left: 2px solid #8B4513 !important;
         padding: 0 !important;
-        break-inside: avoid; /* 防止单个项目被跨页切断 */
+        break-inside: avoid; /* 防止跨页切断项目 */
     }
 
     .card-body {
-        padding: 10px 15px 0 15px !important;
+        padding: 12px 12px 4px 12px !important;
     }
 
-    /* 8. 细节优化 */
-    .custom-list { padding-left: 0 !important; margin-left: 12px !important; }
-    .custom-list li { margin-bottom: 0.25rem !important; } /* 增加列表项间距 */
-
-    .text-secondary { color: #555 !important; }
-    .fw-bold { color: #000 !important; font-size: 12pt !important; }
-
-    .text-md-end { text-align: left !important; }
-    .justify-content-md-end { justify-content: flex-start !important; }
-
-    /* 9. 强制分页类 (如果想手动控制在哪里断开) */
-    .page-break-print {
-        display: block !important;
-        height: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        page-break-before: always !important; /* 兼容旧版浏览器 */
-        break-before: page !important;        /* 现代标准 */
+    /* 8. 列表与细节 */
+    .custom-list {
+        padding-left: 0 !important;
+        margin-left: 15px !important;
     }
 
-    section.mb-5 {
-        margin-top: 5rem !important;
-        page-break-before: auto; /* 允许在此处分页，但不强制 */
+    .custom-list li {
+        margin-bottom: 1px !important;
     }
 
-    /* 1. 设置 A4 纸张的基础边距 */
-    @page {
-        margin: 1.0cm; /* 根据你的简历内容调整 */
+    .text-secondary {
+        color: #555 !important;
+        font-size: 9pt !important;
     }
 
-    /* 2. 定位二维码容器 */
-    #print-qrcode {
-        position: absolute;
-        top: 0.5in;          /* 距离纸张顶部 */
-        right: 0.15in;       /* 与你 container 的 padding 对齐 */
-        width: 80px;         /* 宽度约 2.1cm */
-        text-align: center;
+    .fw-bold {
+        color: #000 !important;
+        font-size: 11pt !important;
+    }
+
+    /* 强制日期与标题同行以节省行数 */
+    .d-flex.justify-content-between {
         display: flex !important;
-        flex-direction: column;
-        align-items: center;
-        text-decoration: none !important; /* 核心：移除 PDF 中的下划线 */
-        z-index: 9999;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: baseline !important;
     }
 
-    /* 3. 图片样式 */
-    #print-qrcode img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    /* 4. 文字说明样式 */
-    #print-qrcode p {
-        font-family: 'JetBrains Mono', monospace; /* 呼应你的技术背景 */
-        font-size: 7pt;       /* 打印建议使用 pt 单位 */
-        color: #8B4513;       /* 统一你的书卷棕色调 */
-        line-height: 1.1;
-        margin-top: 4px;
-        text-transform: uppercase;
-        letter-spacing: 0.02em;
-    }
-
-    #print-qrcode,
-    #print-qrcode img {
-        display: block !important;
+    /* 9. 二维码：稳定定位修复 */
+    #print-qrcode {
+        position: absolute !important;
+        top: 0.25in !important;
+        right: 0.5in !important;
+        width: 70px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        z-index: 9999 !important;
         visibility: visible !important;
         opacity: 1 !important;
     }
 
-    .print-contact-header {
-        /* 使用 margin-top 代替之前的 1.2in，
-           0.4in 到 0.6in 左右通常能完美避开 top: 0.5in 的二维码 */
-        margin-top: 0.5in !important;
-        width: 100% !important;
+    #print-qrcode img {
+        width: 70px !important;
+        height: 70px !important;
         display: block !important;
-        text-align: left !important;
+        border: 0.5pt solid #eee5d8 !important;
     }
 
-    /* 确保联系方式里的链接也能点击 */
-    .print-contact-header a {
-        text-decoration: none !important;
-        pointer-events: auto !important;
-        color: #2c2c2c !important;
+    #print-qrcode p {
+        font-family: 'JetBrains Mono', monospace !important;
+        font-size: 6pt !important;
+        color: #8B4513 !important;
+        margin-top: 3px !important;
+        text-transform: uppercase !important;
     }
 
+    @page {
+        margin-bottom: 0.6in;
+    }
+
+
+    /* 1. 为页面底部留出空间，防止内容覆盖脚注 */
+    @page {
+        margin-bottom: 0.6in;
+    }
+
+    /* 2. 定义固定脚注 */
     .site-footer-print {
         position: fixed;
         bottom: 0;
-        right: 0;
-        font-size: 6pt;
-        color: #a69685;
+        left: 0.5in; /* 与 container 的 padding 对齐 */
+        right: 0.5in;
+        display: block !important;
+        visibility: visible !important;
+        border-top: 0.5pt solid #eee5d8 !important; /* 优雅的浅棕色细线 */
+        padding-top: 5px;
+        background-color: white; /* 确保背景不透明 */
+        z-index: 9999;
+    }
+
+    /* 3. 脚注内部文字样式 */
+    .footer-content-print {
+        display: flex;
+        justify-content: space-between;
         font-family: 'JetBrains Mono', monospace;
+        font-size: 7pt;
+        color: #a69685;
         text-transform: uppercase;
         letter-spacing: 0.05em;
     }
+
 }

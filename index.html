@@ -245,15 +245,13 @@ permalink: /
             </div>
         </section>
 
-        <div class="page-break-print"></div>
-
         <section id="projects" class="mb-5">
 
             <h3 class="h4 pb-2 mb-4 text-uppercase fw-bold text-custom-brown">
                 <i class="bi bi-code-slash me-2"></i>Projects
             </h3>
 
-            <div class="card border-0 shadow-sm mb-4 project-card" style="background-color: #fdfdfb; border: 1px solid #eee5d8 !important;">
+            <div class="card border-0 shadow-sm mb-4 project-card" style="background-color: #fdfdfb;">
                 <div class="card-body p-4">
                     <div class="d-flex align-items-center mb-3">
                         <i class="bi bi-server fs-4 me-3" style="color: #8B4513;"></i>
@@ -277,7 +275,7 @@ permalink: /
                 </div>
             </div>
 
-            <div class="card border-0 shadow-sm mb-4 project-card" style="background-color: #fdfdfb; border: 1px solid #eee5d8 !important;">
+            <div class="card border-0 shadow-sm mb-4 project-card" style="background-color: #fdfdfb;">
                 <div class="card-body p-4">
                     <div class="d-flex align-items-center mb-3">
                         <i class="bi bi-android2 fs-4 me-3" style="color: #8B4513;"></i>
@@ -301,7 +299,7 @@ permalink: /
                 </div>
             </div>
 
-            <div class="card border-0 shadow-sm mb-4 project-card" style="background-color: #fdfdfb; border: 1px solid #eee5d8 !important;">
+            <div class="card border-0 shadow-sm mb-4 project-card" style="background-color: #fdfdfb;">
                 <div class="card-body p-4">
                     <div class="d-flex align-items-center mb-3">
                         <i class="bi bi-apple fs-4 me-3" style="color: #8B4513;"></i>
@@ -325,7 +323,7 @@ permalink: /
                 </div>
             </div>
 
-            <div class="card border-0 shadow-sm mb-4 project-card" style="background-color: #fdfdfb; border: 1px solid #eee5d8 !important;">
+            <div class="card border-0 shadow-sm mb-4 project-card" style="background-color: #fdfdfb;">
                 <div class="card-body p-4">
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <div class="d-flex align-items-center">
@@ -463,6 +461,41 @@ permalink: /
     </div>
 </div>
 
+<div class="visually-hidden">
+    Ryan Su is a Software Engineer and Mathematician at Imperial College London.
+    Expertise includes Kotlin, Java, Swift, Spring Boot, PostgreSQL, and Reactive Programming.
+    Experienced in full-stack library management systems (CoolLib) and university-level mathematics tutoring.
+</div>
+
 <div class="d-none d-print-block site-footer-print">
-    Last updated: {{ site.time | date: "%B %Y" }} | Generated via susui888.github.io
+    <div class="footer-content-print">
+        <div>
+            <i class="bi bi-person-fill"></i> RYAN SU — CV 2026
+        </div>
+        <div>
+            <i class="bi bi-git"></i> BUILD: {{ "now" | date: "%y%m%d" }}-PROD
+        </div>
+        <div>
+            IMPERIAL COLLEGE LONDON
+        </div>
+    </div>
+</div>
+
+<div class="d-print-none text-center mt-5 mb-4 py-3" style="border-top: 1px double #eee5d8;">
+    <div class="container">
+        <div class="row opacity-75" style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #a69685;">
+            <div class="col-md-4 text-md-start mb-2 mb-md-0">
+                <i class="bi bi-clock-history me-1"></i>
+                LAST UPDATED: {{ site.time | date: "%d/%m/%Y %H:%M" }}
+            </div>
+            <div class="col-md-4 text-md-center mb-2 mb-md-0">
+                <i class="bi bi-git me-1"></i>
+                Build: <span class="text-custom-brown">{{ "now" | date: "%y%m%d" }}-PROD</span>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <i class="bi bi-cpu me-1"></i>
+                Powered by Jekyll & Liquid
+            </div>
+        </div>
+    </div>
 </div>
